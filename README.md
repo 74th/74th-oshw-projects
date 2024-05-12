@@ -2,6 +2,8 @@
 
 ## このリポジトリに含まれているプロジェクト
 
+- [grove_qwiic_breadboard](./grove_qwiic_breadboard): ブレッドボードで Grove、Qwiic を扱う為のアダプタ。I2C プルアップ付き。
+
 ## その他の 74th のプロジェクト
 
 - [74th/ch32v-dev-boards](https://github.com/74th/ch32v-dev-boards): WCH の RISC-V MCU、CH32V シリーズを使った開発ボード
