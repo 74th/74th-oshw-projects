@@ -2,7 +2,7 @@
 
 ## このリポジトリに含まれているプロジェクト
 
-- [grove_qwiic_breadboard](./grove_qwiic_breadboard): ブレッドボードで Grove、Qwiic を扱う為のアダプタ。I2C プルアップ付き。
+- [grove_qwiic_breadboard_bridge](./grove_qwiic_breadboard_bridge): ブレッドボードで Grove、Qwiic を扱う為のアダプタ。I2C プルアップ付き。
 
 ## その他の 74th のプロジェクト
 
