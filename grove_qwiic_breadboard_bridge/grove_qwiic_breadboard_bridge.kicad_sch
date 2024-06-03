@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "Grove Qwiic Breadboard Bridge")
-		(rev "v1.0.0")
+		(rev "v1.0.1")
 		(company "Atsushi Morimoto (@74th)")
 	)
 	(lib_symbols
@@ -138,150 +138,6 @@
 						)
 					)
 					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "74th_Interface:Jumper_2"
-			(pin_names
-				(offset 0) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "JP"
-				(at 0 2.794 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Jumper_2_Open"
-				(at 0 -2.286 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "74th:SolderJumper-2"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Jumper, 2-pole, open"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "Jumper SPST"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Jumper* TestPoint*2Pads* TestPoint*Bridge*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Jumper_2_0_0"
-				(circle
-					(center -2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Jumper_2_0_1"
-				(arc
-					(start 1.524 1.27)
-					(mid 0 1.778)
-					(end -1.524 1.27)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Jumper_2_1_1"
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1719,12 +1575,6 @@
 		)
 	)
 	(junction
-		(at 129.54 46.99)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "033e4619-1b01-4f27-ab92-63bb1232ab33")
-	)
-	(junction
 		(at 68.58 46.99)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1737,16 +1587,10 @@
 		(uuid "058f93b5-352d-4b4c-b3ec-357918b650ab")
 	)
 	(junction
-		(at 129.54 36.83)
+		(at 132.08 41.91)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "17035b49-1267-468a-b75b-5267e276bfd7")
-	)
-	(junction
-		(at 156.21 36.83)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "6a493150-77a6-4ee3-9b67-d5bb45587d5a")
+		(uuid "35b9a09e-3188-4b3a-8772-23aa132b0d87")
 	)
 	(junction
 		(at 59.69 49.53)
@@ -1761,7 +1605,7 @@
 		(uuid "95948904-1a03-4a04-baa6-3ee713b3f51b")
 	)
 	(junction
-		(at 156.21 46.99)
+		(at 158.75 41.91)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "aa7652fc-1bf6-418e-b115-128ded1de5c2")
@@ -1790,7 +1634,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 46.99) (xy 156.21 46.99)
+			(xy 154.94 41.91) (xy 158.75 41.91)
 		)
 		(stroke
 			(width 0)
@@ -1807,16 +1651,6 @@
 			(type default)
 		)
 		(uuid "0ccfdd25-868b-4d0d-8c2e-f7762c9f69e0")
-	)
-	(wire
-		(pts
-			(xy 129.54 36.83) (xy 139.7 36.83)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "11b29ede-008d-454b-a285-5fc51ab5f10b")
 	)
 	(wire
 		(pts
@@ -1870,16 +1704,6 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 36.83) (xy 156.21 36.83)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4240c9b0-405d-4281-b040-c638f5d501f0")
-	)
-	(wire
-		(pts
 			(xy 214.63 62.23) (xy 214.63 63.5)
 		)
 		(stroke
@@ -1897,16 +1721,6 @@
 			(type default)
 		)
 		(uuid "59eccb83-06a6-419e-8022-2861ca3f172a")
-	)
-	(wire
-		(pts
-			(xy 156.21 36.83) (xy 156.21 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5f62abf3-32c6-4b76-adf7-c510273fcf5d")
 	)
 	(wire
 		(pts
@@ -1940,7 +1754,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 46.99) (xy 137.16 46.99)
+			(xy 132.08 41.91) (xy 139.7 41.91)
 		)
 		(stroke
 			(width 0)
@@ -2027,16 +1841,6 @@
 			(type default)
 		)
 		(uuid "caeb4b50-ff6f-4ea5-a3fb-258eb240ebb2")
-	)
-	(wire
-		(pts
-			(xy 129.54 36.83) (xy 129.54 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dda6a2ef-a7b7-4ce8-a9bd-6006fcf278c7")
 	)
 	(wire
 		(pts
@@ -2340,7 +2144,7 @@
 			(uuid "4e09dd7b-034b-4213-8ae8-09fb5422bfce")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "CH3")
 					(unit 1)
@@ -2406,7 +2210,7 @@
 			(uuid "0cf5f359-60ba-41ea-b1d4-edd918f16bd3")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "#PWR07")
 					(unit 1)
@@ -2472,7 +2276,7 @@
 			(uuid "2446da2d-2fd6-4845-ae1f-e811a63ed53c")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "#PWR08")
 					(unit 1)
@@ -2538,7 +2342,7 @@
 			(uuid "b0208697-71bf-413d-8beb-da4bd5b0bc25")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "#PWR09")
 					(unit 1)
@@ -2548,7 +2352,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 156.21 54.61 0)
+		(at 158.75 49.53 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2557,7 +2361,7 @@
 		(fields_autoplaced yes)
 		(uuid "20aa0eb6-62ef-4d25-97c3-f9388d19802d")
 		(property "Reference" "#PWR04"
-			(at 156.21 60.96 0)
+			(at 158.75 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2566,7 +2370,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 156.21 59.69 0)
+			(at 158.75 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2574,7 +2378,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 156.21 54.61 0)
+			(at 158.75 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2583,7 +2387,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 156.21 54.61 0)
+			(at 158.75 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2592,7 +2396,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 156.21 54.61 0)
+			(at 158.75 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2604,7 +2408,7 @@
 			(uuid "744896b1-794a-4d1f-a40d-0cb202599f85")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "#PWR04")
 					(unit 1)
@@ -2674,7 +2478,7 @@
 			(uuid "72be5257-df99-4909-9329-4642729b2c2e")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "C3")
 					(unit 1)
@@ -2744,7 +2548,7 @@
 			(uuid "0038fb95-82d0-457e-8f28-56f5b1f6c908")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "R1")
 					(unit 1)
@@ -2814,7 +2618,7 @@
 			(uuid "df1e3d67-ec71-4a79-9795-f463943145e5")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "CH2")
 					(unit 1)
@@ -2880,7 +2684,7 @@
 			(uuid "db5365b0-996a-4444-bfcf-f584dbceba96")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "#PWR014")
 					(unit 1)
@@ -2890,7 +2694,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 129.54 36.83 0)
+		(at 132.08 41.91 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2899,7 +2703,7 @@
 		(fields_autoplaced yes)
 		(uuid "55b67542-ad50-4155-91da-04d27e8e1704")
 		(property "Reference" "#PWR010"
-			(at 129.54 40.64 0)
+			(at 132.08 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2908,7 +2712,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 129.54 31.75 0)
+			(at 132.08 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2916,7 +2720,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 129.54 36.83 0)
+			(at 132.08 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2925,7 +2729,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 129.54 36.83 0)
+			(at 132.08 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2934,7 +2738,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 129.54 36.83 0)
+			(at 132.08 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2946,7 +2750,7 @@
 			(uuid "cced0284-53da-4b11-ba20-d96919cf411b")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "#PWR010")
 					(unit 1)
@@ -2956,7 +2760,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 129.54 50.8 0)
+		(at 132.08 45.72 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2965,7 +2769,7 @@
 		(fields_autoplaced yes)
 		(uuid "61c25479-c301-4dce-8a9f-1e755695c8f5")
 		(property "Reference" "C2"
-			(at 133.35 49.5299 0)
+			(at 135.89 44.4499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2974,7 +2778,7 @@
 			)
 		)
 		(property "Value" "0.1u"
-			(at 133.35 52.0699 0)
+			(at 135.89 46.9899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2983,7 +2787,7 @@
 			)
 		)
 		(property "Footprint" "74th:Capacitor_0603_1608"
-			(at 130.5052 54.61 0)
+			(at 133.0452 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2992,7 +2796,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 129.54 50.8 0)
+			(at 132.08 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3001,7 +2805,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 129.54 50.8 0)
+			(at 132.08 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3016,7 +2820,7 @@
 			(uuid "d7abcdf4-72b4-40b5-b416-439901c6ab6c")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "C2")
 					(unit 1)
@@ -3086,7 +2890,7 @@
 			(uuid "9243e6f3-636b-4e10-89a7-f6416db8ba47")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "R2")
 					(unit 1)
@@ -3152,7 +2956,7 @@
 			(uuid "5e6f38c5-011b-47cb-b50f-4245521067c3")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "#PWR03")
 					(unit 1)
@@ -3222,7 +3026,7 @@
 			(uuid "4cc6a34a-4ee1-4c17-bbbe-9133437e1c74")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "CH5")
 					(unit 1)
@@ -3288,7 +3092,7 @@
 			(uuid "1097cc9c-ecf3-471e-a7a7-3ad89aa77daa")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "#PWR015")
 					(unit 1)
@@ -3354,7 +3158,7 @@
 			(uuid "36ff1677-65ad-4637-9883-5890e534d138")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "#PWR012")
 					(unit 1)
@@ -3424,7 +3228,7 @@
 			(uuid "fc609f10-c64e-4b06-be07-79663bd12640")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "CH1")
 					(unit 1)
@@ -3434,7 +3238,7 @@
 	)
 	(symbol
 		(lib_id "74th_Passive:AP7333-LDO_Regulator_SOT23")
-		(at 144.78 46.99 0)
+		(at 147.32 41.91 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3443,7 +3247,7 @@
 		(fields_autoplaced yes)
 		(uuid "90cbff4e-51ac-4a26-abd8-4aa664e585cf")
 		(property "Reference" "U1"
-			(at 144.78 40.64 0)
+			(at 147.32 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3451,7 +3255,7 @@
 			)
 		)
 		(property "Value" "AP7333-33SAG"
-			(at 144.78 43.18 0)
+			(at 147.32 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3459,7 +3263,7 @@
 			)
 		)
 		(property "Footprint" "74th:Package_SOT-23"
-			(at 144.78 64.77 0)
+			(at 147.32 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3468,7 +3272,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/AP7333.pdf"
-			(at 144.78 62.865 0)
+			(at 147.32 57.785 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3477,7 +3281,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 144.78 46.99 0)
+			(at 147.32 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3495,7 +3299,7 @@
 			(uuid "58e14af3-6d7f-4bce-a08b-f9622f1c02b8")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "U1")
 					(unit 1)
@@ -3571,7 +3375,7 @@
 			(uuid "dc99ccaf-f9b6-456a-901c-93c6ebf83d31")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "CH4")
 					(unit 1)
@@ -3637,7 +3441,7 @@
 			(uuid "1fb618a0-2085-4674-b368-fa63d2065fc8")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "#PWR013")
 					(unit 1)
@@ -3711,7 +3515,7 @@
 			(uuid "e3e9a144-f145-4b3d-83b3-4c4734196eef")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "JP2")
 					(unit 1)
@@ -3777,77 +3581,9 @@
 			(uuid "ff0bb27d-7ca1-4b40-8365-67a493d5b456")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "#PWR01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "74th_Interface:Jumper_2")
-		(at 144.78 36.83 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b6bf5159-bf6b-4e7d-b2f2-dea09ee5aeb1")
-		(property "Reference" "JP1"
-			(at 144.78 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Jumper_2_Open"
-			(at 144.78 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "74th:PinOut_Pin_2"
-			(at 144.78 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 144.78 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Jumper, 2-pole, open"
-			(at 144.78 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c297ec68-aed3-4f05-858d-c735fc945331")
-		)
-		(pin "2"
-			(uuid "5241f42a-a902-4ddf-bb19-d0d8c6d5193b")
-		)
-		(instances
-			(project "grove_qwiic_breadboard"
-				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
-					(reference "JP1")
 					(unit 1)
 				)
 			)
@@ -3921,7 +3657,7 @@
 			(uuid "1917cbeb-375a-4844-9fd1-908b2a8f3333")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "CH6")
 					(unit 1)
@@ -3931,7 +3667,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 156.21 50.8 0)
+		(at 158.75 45.72 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3940,7 +3676,7 @@
 		(fields_autoplaced yes)
 		(uuid "cf6c9d2b-f908-4722-bb22-936413386450")
 		(property "Reference" "C1"
-			(at 160.02 49.5299 0)
+			(at 162.56 44.4499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3949,7 +3685,7 @@
 			)
 		)
 		(property "Value" "0.1u"
-			(at 160.02 52.0699 0)
+			(at 162.56 46.9899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3958,7 +3694,7 @@
 			)
 		)
 		(property "Footprint" "74th:Capacitor_0603_1608"
-			(at 157.1752 54.61 0)
+			(at 159.7152 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3967,7 +3703,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 156.21 50.8 0)
+			(at 158.75 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3976,7 +3712,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 156.21 50.8 0)
+			(at 158.75 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3991,7 +3727,7 @@
 			(uuid "675b6af8-e041-4ac2-954d-919ce1876a80")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "C1")
 					(unit 1)
@@ -4001,7 +3737,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 129.54 54.61 0)
+		(at 132.08 49.53 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4010,7 +3746,7 @@
 		(fields_autoplaced yes)
 		(uuid "d26da5ba-1a78-4913-a4c0-b0c3d9467ea3")
 		(property "Reference" "#PWR05"
-			(at 129.54 60.96 0)
+			(at 132.08 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4019,7 +3755,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 129.54 59.69 0)
+			(at 132.08 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4027,7 +3763,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 129.54 54.61 0)
+			(at 132.08 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4036,7 +3772,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 129.54 54.61 0)
+			(at 132.08 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4045,7 +3781,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 129.54 54.61 0)
+			(at 132.08 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4057,7 +3793,7 @@
 			(uuid "effa6cd7-3f8d-4822-8af2-0784e557b0ca")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "#PWR05")
 					(unit 1)
@@ -4067,7 +3803,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 156.21 36.83 0)
+		(at 158.75 41.91 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4076,7 +3812,7 @@
 		(fields_autoplaced yes)
 		(uuid "e45a02bb-de94-4d0c-af0c-b44cc196d365")
 		(property "Reference" "#PWR02"
-			(at 156.21 40.64 0)
+			(at 158.75 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4085,7 +3821,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 156.21 31.75 0)
+			(at 158.75 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4093,7 +3829,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 156.21 36.83 0)
+			(at 158.75 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4102,7 +3838,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 156.21 36.83 0)
+			(at 158.75 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4111,7 +3847,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 156.21 36.83 0)
+			(at 158.75 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4123,7 +3859,7 @@
 			(uuid "f4d5aa5a-868c-4cd9-9c90-ac3c90c08693")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "#PWR02")
 					(unit 1)
@@ -4189,7 +3925,7 @@
 			(uuid "06d144af-8210-43f1-8166-90414fa51eca")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "#PWR011")
 					(unit 1)
@@ -4199,7 +3935,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 144.78 54.61 0)
+		(at 147.32 49.53 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4208,7 +3944,7 @@
 		(fields_autoplaced yes)
 		(uuid "ff530068-2f14-46d2-8e9d-bf4bcdb6cb42")
 		(property "Reference" "#PWR06"
-			(at 144.78 60.96 0)
+			(at 147.32 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4217,7 +3953,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 144.78 59.69 0)
+			(at 147.32 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4225,7 +3961,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 144.78 54.61 0)
+			(at 147.32 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4234,7 +3970,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 144.78 54.61 0)
+			(at 147.32 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4243,7 +3979,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 144.78 54.61 0)
+			(at 147.32 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4255,7 +3991,7 @@
 			(uuid "496749ad-294e-4bb8-a301-5457d55f27ab")
 		)
 		(instances
-			(project "grove_qwiic_breadboard"
+			(project "grove_qwiic_breadboard_bridge"
 				(path "/3294431b-c064-4afd-a524-33c087a1ea66"
 					(reference "#PWR06")
 					(unit 1)

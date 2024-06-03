@@ -449,7 +449,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "grove_qwiic_breadboard.kicad_pro",
+    "filename": "grove_qwiic_breadboard_bridge.kicad_pro",
     "version": 1
   },
   "net_settings": {
