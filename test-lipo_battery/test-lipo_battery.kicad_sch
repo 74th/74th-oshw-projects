@@ -4089,6 +4089,28 @@
 		)
 		(uuid "352d6a6b-f004-4aed-97e4-1c4122095a46")
 	)
+	(text "MOSFETをDiodeの代わりとして使う場合の\n接続が誤っていてたので\nMOSFETに意味はなし"
+		(exclude_from_sim no)
+		(at 76.454 51.816 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "44c96265-d4cb-401a-a239-0a7a9228fa6d")
+	)
+	(text "MOSFETをDiodeの代わりとして使う場合の\n接続が誤っていてたので\nMOSFETに意味はなし"
+		(exclude_from_sim no)
+		(at 47.498 182.626 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "48440251-4840-4601-8dc7-ffe78284c59e")
+	)
 	(text "USB Power"
 		(exclude_from_sim no)
 		(at 14.732 14.986 0)

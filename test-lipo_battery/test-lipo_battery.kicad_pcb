@@ -995,7 +995,7 @@
 		(descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor handsolder")
 		(property "Reference" "R8"
-			(at 1.778 1.651 0)
+			(at -2.794 0.127 0)
 			(layer "F.SilkS")
 			(uuid "e7f07e13-106c-4e16-a5ca-d13d077efdfc")
 			(effects
