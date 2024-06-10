@@ -2,7 +2,12 @@
 
 ## このリポジトリに含まれているプロジェクト
 
-- [grove_qwiic_breadboard_bridge](./grove_qwiic_breadboard_bridge): ブレッドボードで Grove、Qwiic を扱う為のアダプタ。I2C プルアップ付き。
+個別に設計していない、その他プロジェクト格納用リポジトリのため、あまり品質高くありません。
+
+- 2024-06 [grove_universal_board](./grove_universal_board/): Grove デバイスを作るための小型ユニバーサル基板
+- 2024-06 [grove_qwiic_debug_adapter](./grove_qwiic_debug_adapter): Grove と qwiic の信号を読み取るアダプタ
+- 2024-05 [test-lipo_batter](./test-lipo_batter): リポバッテリー充電 IC と、DCDC コンバータの、74th の学習用基盤
+- 2024-05 [grove_qwiic_breadboard_bridge](./grove_qwiic_breadboard_bridge): ブレッドボードで Grove、Qwiic を扱う為のアダプタ。I2C プルアップ付き。
 
 ## その他の 74th のプロジェクト
 
