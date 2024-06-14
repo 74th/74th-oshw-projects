@@ -9,7 +9,7 @@
 - 2024-05 [test-lipo_batter](./test-lipo_batter): リポバッテリー充電 IC と、DCDC コンバータの、74th の学習用基盤
 - 2024-05 [grove_qwiic_breadboard_bridge](./grove_qwiic_breadboard_bridge): ブレッドボードで Grove、Qwiic を扱う為のアダプタ。I2C プルアップ付き。
 
-## その他の 74th のプロジェクト
+## その他の 74th の OSH プロジェクト（KiCad ファイルを公開しているもの）
 
 - [74th/ch32v-dev-boards](https://github.com/74th/ch32v-dev-boards): WCH の RISC-V MCU、CH32V シリーズを使った開発ボード
 - [74th/esp32-dev-boards](https://github.com/74th/esp32-dev-boards): Espressif の ESP32 シリーズを使った開発ボード
