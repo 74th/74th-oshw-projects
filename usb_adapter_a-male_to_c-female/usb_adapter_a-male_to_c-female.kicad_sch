@@ -4,6 +4,11 @@
 	(generator_version "8.0")
 	(uuid "9c4ea88e-8a29-402c-93bf-dd0d78f1062e")
 	(paper "A4")
+	(title_block
+		(title "USB AM-CF Adapter")
+		(rev "v1.0.0")
+		(company "Atsushi Morimoto (@74th)")
+	)
 	(lib_symbols
 		(symbol "74th_Interface:USB_TypeA-2.0_Plug"
 			(pin_names
