@@ -6,6 +6,8 @@
 
 ![alt text](3d_render-2.png)
 
+Shop: https://74th.booth.pm/items/5935664
+
 - semantics: [pdf](./grove_universal_board-semantics-v1.1.0.pdf) [kicanvas](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2F74th%2F74th-open-source-hardware-projects%2Fblob%2Fgrove_universal_board%2Fv1.1.0%2Fgrove_universal_board%2Fgrove_universal_board.kicad_sch)
 - pcb: [kicanvas](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2F74th%2F74th-open-source-hardware-projects%2Fblob%2Fgrove_universal_board%2Fv1.1.0%2Fgrove_universal_board%2Fgrove_universal_board.kicad_pcb)
 
