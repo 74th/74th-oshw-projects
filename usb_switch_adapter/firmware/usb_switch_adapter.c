@@ -1,39 +1,105 @@
 /* Template app on which you can build your own. */
 
 #include "ch32v003fun.h"
+#include "ch32v003_GPIO_branchless.h"
 #include <stdio.h>
 
-uint32_t count;
+uint32_t loop_count_ms = 0;
+
+#define CH217_EN_PIN GPIOv_from_PORT_PIN(GPIO_port_A, 2)
+#define CH217_FLAG_PIN GPIOv_from_PORT_PIN(GPIO_port_C, 2)
+#define SWITCH_FLAG_PIN GPIOv_from_PORT_PIN(GPIO_port_D, 4)
+
+void setup()
+{
+	GPIO_port_enable(GPIO_port_A);
+	GPIO_port_enable(GPIO_port_C);
+	GPIO_port_enable(GPIO_port_D);
+
+	GPIO_pinMode(CH217_EN_PIN, GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
+	GPIO_pinMode(CH217_FLAG_PIN, GPIO_pinMode_I_pullUp, GPIO_Speed_10MHz);
+	GPIO_pinMode(SWITCH_FLAG_PIN, GPIO_pinMode_I_pullUp, GPIO_Speed_10MHz);
+}
+
+#define STATE_OFF 0
+#define STATE_ON 1
+#define STATE_PUSHED_FROM_OFF 2
+#define STATE_PUSHED_FROM_ON 3
+
+#define HOLD_THREASHOLD_DURATION_MS 1000
+
+uint8_t state = STATE_ON;
+
+uint32_t push_start_ms = 0;
+
+void loop()
+{
+	uint8_t sw = GPIO_digitalRead(SWITCH_FLAG_PIN);
+	if (sw)
+	{
+		uint32_t hold_duration_ms = loop_count_ms - push_start_ms;
+		// unpushed
+		switch (state)
+		{
+		case STATE_OFF:
+			GPIO_digitalWrite_1(CH217_EN_PIN);
+			break;
+		case STATE_ON:
+			GPIO_digitalWrite_0(CH217_EN_PIN);
+			break;
+		case STATE_PUSHED_FROM_OFF:
+			state = STATE_ON;
+			GPIO_digitalWrite_0(CH217_EN_PIN);
+			break;
+		case STATE_PUSHED_FROM_ON:
+			if (hold_duration_ms > HOLD_THREASHOLD_DURATION_MS)
+			{
+				state = STATE_OFF;
+				GPIO_digitalWrite_1(CH217_EN_PIN);
+			}
+			else
+			{
+				state = STATE_ON;
+				GPIO_digitalWrite_0(CH217_EN_PIN);
+			}
+			break;
+		}
+	}
+	else
+	{
+		// pushed
+		switch (state)
+		{
+		case STATE_OFF:
+			GPIO_digitalWrite_0(CH217_EN_PIN);
+			state = STATE_PUSHED_FROM_OFF;
+			push_start_ms = loop_count_ms;
+			break;
+		case STATE_ON:
+			GPIO_digitalWrite_1(CH217_EN_PIN);
+			state = STATE_PUSHED_FROM_ON;
+			push_start_ms = loop_count_ms;
+			break;
+		case STATE_PUSHED_FROM_OFF:
+			GPIO_digitalWrite_0(CH217_EN_PIN);
+			break;
+		case STATE_PUSHED_FROM_ON:
+			GPIO_digitalWrite_1(CH217_EN_PIN);
+			break;
+		}
+	}
+}
 
 int main()
 {
 	SystemInit();
 
-	// Enable GPIOs
-	RCC->APB2PCENR |= RCC_APB2Periph_GPIOD | RCC_APB2Periph_GPIOC;
+	setup();
 
-	// GPIO D0 Push-Pull
-	GPIOD->CFGLR &= ~(0xf<<(4*0));
-	GPIOD->CFGLR |= (GPIO_Speed_10MHz | GPIO_CNF_OUT_PP)<<(4*0);
-
-	// GPIO D4 Push-Pull
-	GPIOD->CFGLR &= ~(0xf<<(4*4));
-	GPIOD->CFGLR |= (GPIO_Speed_10MHz | GPIO_CNF_OUT_PP)<<(4*4);
-
-	// GPIO C0 Push-Pull
-	GPIOC->CFGLR &= ~(0xf<<(4*0));
-	GPIOC->CFGLR |= (GPIO_Speed_10MHz | GPIO_CNF_OUT_PP)<<(4*0);
-
-	while(1)
+	while (1)
 	{
-		GPIOD->BSHR = 1 | (1<<4);	 // Turn on GPIOs
-		GPIOC->BSHR = 1;
-		printf( "+%lu\n", count++ );
-		Delay_Ms(250);
-		GPIOD->BSHR = (1<<16) | (1<<(16+4)); // Turn off GPIODs
-		GPIOC->BSHR = (1<<16);
-		printf( "-%lu\n", count++ );
-		Delay_Ms(250);
+		loop();
+		Delay_Ms(1);
+		loop_count_ms++;
 	}
 }
-

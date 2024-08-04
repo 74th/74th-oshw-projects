@@ -15,6 +15,7 @@
         "bashrc": "shellscript",
         "*.service": "plaintext",
         "ch32v003fun.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "stdio.h": "c"
     },
 }
