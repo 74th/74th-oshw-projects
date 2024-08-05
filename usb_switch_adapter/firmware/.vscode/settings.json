@@ -1,0 +1,21 @@
+{
+    "cmake.configureOnOpen": false,
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "",
+            "sbinaryPath": "usb_switch_adapter.elf",
+            "binaryArgs": []
+        }
+    ],
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4,
+    "files.associations": {
+        "*.jinja": "yaml",
+        "*.md": "markdown",
+        "bashrc": "shellscript",
+        "*.service": "plaintext",
+        "ch32v003fun.h": "c",
+        "string.h": "c",
+        "stdio.h": "c"
+    },
+}
