@@ -6,11 +6,11 @@
 	(paper "A4")
 	(title_block
 		(title "USB Switch Adapter")
-		(rev "1.0.0")
+		(rev "1.1.0")
 		(company "Atsushi Morimoto (@74th)")
 	)
 	(lib_symbols
-		(symbol "74th_Interface:SWD_WCH-1Wire_WITH-TXD-VCC"
+		(symbol "74th_Interface:SWD_WCH-1Wire_WITH-VCC"
 			(pin_names
 				(offset 1.016)
 			)
@@ -18,23 +18,23 @@
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "CH"
-				(at 0 7.62 0)
+				(at -3.81 5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "SWD 1Wire & UART TXD"
-				(at 0 5.08 0)
+			(property "Value" "SWD"
+				(at 3.81 5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" "74th:PinOut_4Pin"
-				(at 0 -7.62 0)
+			(property "Footprint" ""
+				(at -2.54 5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -60,10 +60,10 @@
 					(hide yes)
 				)
 			)
-			(symbol "SWD_WCH-1Wire_WITH-TXD-VCC_0_1"
+			(symbol "SWD_WCH-1Wire_WITH-VCC_0_1"
 				(rectangle
 					(start -3.81 3.81)
-					(end 3.81 -6.35)
+					(end 3.81 -3.81)
 					(stroke
 						(width 0)
 						(type default)
@@ -73,7 +73,7 @@
 					)
 				)
 			)
-			(symbol "SWD_WCH-1Wire_WITH-TXD-VCC_1_1"
+			(symbol "SWD_WCH-1Wire_WITH-VCC_1_1"
 				(pin power_out line
 					(at 6.35 2.54 180)
 					(length 2.54)
@@ -121,24 +121,6 @@
 						)
 					)
 					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 6.35 -5.08 180)
-					(length 2.54)
-					(name "TXD"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2628,16 +2610,16 @@
 		(uuid "016bb5c8-43b4-4ba2-a02c-7bb62094504b")
 	)
 	(no_connect
-		(at 138.43 162.56)
-		(uuid "41b57f3e-059a-42c0-a4cf-33cf869faf29")
-	)
-	(no_connect
 		(at 172.72 99.06)
 		(uuid "41eaaa03-1cc8-4826-be4f-6a2a4235f942")
 	)
 	(no_connect
 		(at 172.72 62.23)
 		(uuid "5b989e16-ddff-4ee6-9f5a-05dc20a939c1")
+	)
+	(no_connect
+		(at 110.49 162.56)
+		(uuid "5c6565cb-1d5e-4ba5-b763-0924ec8e6a3d")
 	)
 	(no_connect
 		(at 172.72 87.63)
@@ -2676,16 +2658,6 @@
 			(type default)
 		)
 		(uuid "0154cfba-4bba-41b5-91ca-f1480dab463a")
-	)
-	(wire
-		(pts
-			(xy 99.06 162.56) (xy 110.49 162.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "04312c54-b357-4b81-ba26-43028fd67678")
 	)
 	(wire
 		(pts
@@ -3089,16 +3061,6 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 166.37) (xy 69.85 166.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b6f2e8f0-9db0-4181-9b3a-9ffbb45a13f0")
-	)
-	(wire
-		(pts
 			(xy 172.72 35.56) (xy 167.64 35.56)
 		)
 		(stroke
@@ -3169,6 +3131,16 @@
 	)
 	(wire
 		(pts
+			(xy 241.3 109.22) (xy 252.73 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd662805-a6ed-45c2-b740-0ea31b09f11a")
+	)
+	(wire
+		(pts
 			(xy 55.88 48.26) (xy 55.88 50.8)
 		)
 		(stroke
@@ -3209,7 +3181,17 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 36.83) (xy 227.33 36.83)
+			(xy 138.43 162.56) (xy 151.13 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ebcd34da-fb77-47de-9f38-f0c8a5d76816")
+	)
+	(wire
+		(pts
+			(xy 252.73 38.1) (xy 241.3 38.1)
 		)
 		(stroke
 			(width 0)
@@ -3249,7 +3231,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 38.1) (xy 238.76 36.83)
+			(xy 252.73 39.37) (xy 252.73 38.1)
 		)
 		(stroke
 			(width 0)
@@ -3386,13 +3368,13 @@
 		(uuid "f6732360-7316-4c66-868b-ced340c83c2c")
 	)
 	(label "SWITCH"
-		(at 99.06 172.72 0)
+		(at 151.13 167.64 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "138451eb-fe48-4b2b-8567-3fdc4d85b155")
 	)
@@ -3417,17 +3399,6 @@
 			(justify left bottom)
 		)
 		(uuid "2f920b33-e1a6-43be-ac9d-54d369c5955a")
-	)
-	(label "TXD"
-		(at 69.85 166.37 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "3b5b3ad2-a765-4cd6-8c31-0e2acebd1ac4")
 	)
 	(label "DN1"
 		(at 60.96 54.61 180)
@@ -3474,7 +3445,7 @@
 		(uuid "5fc447d5-b1e0-4ef4-aabe-6fa848f991ec")
 	)
 	(label "SWITCH"
-		(at 227.33 36.83 0)
+		(at 241.3 38.1 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3483,6 +3454,17 @@
 			(justify left bottom)
 		)
 		(uuid "63dfad4a-08da-4173-a7ef-95246cf9bd22")
+	)
+	(label "LED"
+		(at 151.13 162.56 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "69480c42-a06c-4282-9ff2-c1bd7ba4107c")
 	)
 	(label "DP1"
 		(at 161.29 68.58 0)
@@ -3505,17 +3487,6 @@
 			(justify right bottom)
 		)
 		(uuid "6b6059e0-6736-4c4b-9d9f-4ca9e1859db2")
-	)
-	(label "TXD"
-		(at 99.06 162.56 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "7acda0c8-3108-452b-bf9c-4c7213db65d3")
 	)
 	(label "CC2"
 		(at 161.29 58.42 0)
@@ -3573,13 +3544,13 @@
 		(uuid "bea076b3-4719-41d8-9884-46bf3aae6201")
 	)
 	(label "SWDIO"
-		(at 151.13 167.64 180)
+		(at 99.06 172.72 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "cb546b40-2896-4f9e-8bf2-20204e041d0b")
 	)
@@ -3593,6 +3564,17 @@
 			(justify right bottom)
 		)
 		(uuid "cc31fabb-38a5-41a6-a075-b6b3ab5e4df7")
+	)
+	(label "LED"
+		(at 241.3 109.22 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "cdde6270-7606-4b58-bda7-9f165650107b")
 	)
 	(label "CC1"
 		(at 60.96 73.66 180)
@@ -3692,72 +3674,6 @@
 			(project ""
 				(path "/96baf828-b7d7-430b-a8f7-01a85ee82f47"
 					(reference "C1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:VCC")
-		(at 241.3 86.36 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "04aad513-69bb-4c6a-8dd7-2bbab0fafba6")
-		(property "Reference" "#PWR016"
-			(at 241.3 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "VCC"
-			(at 241.3 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 241.3 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 241.3 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 241.3 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "033e6321-123a-465b-8984-cbc6b76e944f")
-		)
-		(instances
-			(project "usb_switch_adapter"
-				(path "/96baf828-b7d7-430b-a8f7-01a85ee82f47"
-					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -3898,7 +3814,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 241.3 90.17 0)
+		(at 252.73 97.79 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3907,7 +3823,7 @@
 		(fields_autoplaced yes)
 		(uuid "1ce15b3b-8eae-4a4b-86f1-6fbcee96e4f4")
 		(property "Reference" "R2"
-			(at 243.84 88.8999 0)
+			(at 255.27 96.5199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3916,7 +3832,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 243.84 91.4399 0)
+			(at 255.27 99.0599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3925,7 +3841,7 @@
 			)
 		)
 		(property "Footprint" "74th:Register_0603_1608"
-			(at 239.522 90.17 90)
+			(at 250.952 97.79 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3934,7 +3850,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 241.3 90.17 0)
+			(at 252.73 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3943,7 +3859,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 241.3 90.17 0)
+			(at 252.73 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3967,14 +3883,13 @@
 		)
 	)
 	(symbol
-		(lib_id "74th_Interface:SWD_WCH-1Wire_WITH-TXD-VCC")
+		(lib_id "74th_Interface:SWD_WCH-1Wire_WITH-VCC")
 		(at 48.26 161.29 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "22941e6e-9f63-47e9-9e3a-9a70c215c688")
 		(property "Reference" "CH1"
 			(at 48.26 152.4 0)
@@ -3984,7 +3899,7 @@
 				)
 			)
 		)
-		(property "Value" "SWD 1Wire & UART TXD"
+		(property "Value" "SWD 1Wire"
 			(at 48.26 154.94 0)
 			(effects
 				(font
@@ -3992,8 +3907,8 @@
 				)
 			)
 		)
-		(property "Footprint" "74th:PinOut_Pin_4"
-			(at 48.26 168.91 0)
+		(property "Footprint" "74th:PinOut_Pin_3_3GND"
+			(at 45.72 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4018,9 +3933,6 @@
 				)
 				(hide yes)
 			)
-		)
-		(pin "4"
-			(uuid "fe867725-9c2a-4306-bab2-b53b2209a507")
 		)
 		(pin "2"
 			(uuid "37d58245-cec2-4be0-919b-ad59b7936454")
@@ -4188,6 +4100,72 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
+		(at 252.73 93.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6bd1a6a5-553f-4b40-9c62-0f32c347b042")
+		(property "Reference" "#PWR015"
+			(at 252.73 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VBUS"
+			(at 252.73 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 252.73 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 252.73 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VBUS\""
+			(at 252.73 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "77e94049-02c6-4cb5-a06b-69308128c4e3")
+		)
+		(instances
+			(project "usb_switch_adapter"
+				(path "/96baf828-b7d7-430b-a8f7-01a85ee82f47"
+					(reference "#PWR015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VBUS")
 		(at 99.06 55.88 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4254,7 +4232,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 238.76 48.26 0)
+		(at 252.73 49.53 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4263,7 +4241,7 @@
 		(fields_autoplaced yes)
 		(uuid "73a132b1-b3b4-4e4f-ad41-09256c160b67")
 		(property "Reference" "#PWR014"
-			(at 238.76 54.61 0)
+			(at 252.73 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4272,7 +4250,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 238.76 53.34 0)
+			(at 252.73 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4280,7 +4258,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 238.76 48.26 0)
+			(at 252.73 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4289,7 +4267,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 238.76 48.26 0)
+			(at 252.73 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4298,7 +4276,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 238.76 48.26 0)
+			(at 252.73 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4453,7 +4431,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 241.3 97.79 90)
+		(at 252.73 105.41 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4462,7 +4440,7 @@
 		(fields_autoplaced yes)
 		(uuid "9d74d52b-16f5-4936-b4fd-46fe00c3ae9c")
 		(property "Reference" "D1"
-			(at 245.11 98.1074 90)
+			(at 256.54 105.7274 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4471,7 +4449,7 @@
 			)
 		)
 		(property "Value" "Blue"
-			(at 245.11 100.6474 90)
+			(at 256.54 108.2674 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4480,7 +4458,7 @@
 			)
 		)
 		(property "Footprint" "74th:LED_BACK_0805_2012"
-			(at 241.3 97.79 0)
+			(at 252.73 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4489,7 +4467,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 241.3 97.79 0)
+			(at 252.73 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4498,7 +4476,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 241.3 97.79 0)
+			(at 252.73 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4516,72 +4494,6 @@
 			(project ""
 				(path "/96baf828-b7d7-430b-a8f7-01a85ee82f47"
 					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 241.3 101.6 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a34d321b-1360-4bb7-8c7d-72c373d6f63f")
-		(property "Reference" "#PWR015"
-			(at 241.3 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 241.3 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 241.3 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 241.3 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 241.3 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "89802bb5-cdc2-4781-a84f-39ff30fb3922")
-		)
-		(instances
-			(project "usb_switch_adapter"
-				(path "/96baf828-b7d7-430b-a8f7-01a85ee82f47"
-					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -4903,7 +4815,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "74th:Register_0603_1608"
@@ -5306,7 +5217,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 238.76 43.18 90)
+		(at 252.73 44.45 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5315,7 +5226,7 @@
 		(fields_autoplaced yes)
 		(uuid "f8949bfe-76b6-4d33-abb6-19192e32472d")
 		(property "Reference" "SW1"
-			(at 240.03 41.9099 90)
+			(at 254 43.1799 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5324,7 +5235,7 @@
 			)
 		)
 		(property "Value" "SW_Push"
-			(at 240.03 44.4499 90)
+			(at 254 45.7199 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5333,7 +5244,7 @@
 			)
 		)
 		(property "Footprint" "74th:Switch_MXChoc_1.0u"
-			(at 233.68 43.18 0)
+			(at 247.65 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5342,7 +5253,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 233.68 43.18 0)
+			(at 247.65 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5351,7 +5262,7 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 238.76 43.18 0)
+			(at 252.73 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
