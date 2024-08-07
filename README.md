@@ -1,13 +1,24 @@
 # 74th の公開している PCB のプロジェクト
 
+※ 2024/08/08 ディレクトリ構成を変更しました（74TH-G050 等の ID を追加しました）。一部、かつてに頒布した基板の取説で印刷したリンクが切れている場合があります。 適宜、読み替えて利用をお願いします。
+
 ## このリポジトリに含まれているプロジェクト
 
-個別に設計していない、その他プロジェクト格納用リポジトリのため、あまり品質高くありません。
+### メイン
 
-- 2024-06 [grove_universal_board](./grove_universal_board/): Grove デバイスを作るための小型ユニバーサル基板
-- 2024-06 [grove_qwiic_debug_adapter](./grove_qwiic_debug_adapter): Grove と qwiic の信号を読み取るアダプタ
-- 2024-05 [test-lipo_batter](./test-lipo_batter): リポバッテリー充電 IC と、DCDC コンバータの、74th の学習用基盤
-- 2024-05 [grove_qwiic_breadboard_bridge](./grove_qwiic_breadboard_bridge): ブレッドボードで Grove、Qwiic を扱う為のアダプタ。I2C プルアップ付き。
+- 2024-08 [74TH-G054-grove_keymouse](./74TH-G054-grove_keymouse/): CH9329 を使って UART 経由でキーボード、マウスとして振るわせる、Grove UArT デバイス
+- 2024-07 [74TH-G053-usb_switch_adapter](./74TH-G053-usb_switch_adapter/): スイッチを追加する USB アダプタ
+- 2024-06 [74TH-G050-grove_universal_board](./74TH-G050-grove_universal_board/): Grove デバイスを作るための小型ユニバーサル基板
+- 2024-06 [74TH-G049-grove_qwiic_debug_adapter](./74TH-G049-grove_qwiic_debug_adapter/): Grove と qwiic の信号を読み取るアダプタ
+- 2024-05 [74TH-G048-grove_qwiic_breadboard_bridge](./74TH-G048-grove_qwiic_breadboard_bridge/): ブレッドボードで Grove、Qwiic を扱う為のアダプタ。I2C プルアップ付き。
+
+### その他、便利なもの
+
+- 2024-07 [MISC-usb_adapter_a-male_to_c-female](./MISC-usb_adapter_a-male_to_c-female/): USB Type-A オス → USB Type-C メス アダプタ
+
+### 検証基板
+
+- 2024-05 [TEST-test-lipo_battery](./TEST-test-lipo_battery/): リポバッテリー充電 IC と、DCDC コンバータの、74th の学習用基盤
 
 ## その他の 74th の OSH プロジェクト（KiCad ファイルを公開しているもの）
 
