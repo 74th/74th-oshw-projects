@@ -1,5 +1,7 @@
 # USB Switch Adapter
 
+<img src="./photo1.jpeg" width="400" />
+
 Switchable adapter for 5V USB-C devices that allows power shutdown with a switch.
 
 スイッチで、電源遮断によるオフが行える 5V USB-C デバイスのアダプタ
