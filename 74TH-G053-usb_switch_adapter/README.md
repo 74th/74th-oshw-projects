@@ -6,6 +6,8 @@ Switchable adapter for 5V USB-C devices that allows power shutdown with a switch
 
 スイッチで、電源遮断によるオフが行える 5V USB-C デバイスのアダプタ
 
+🎥 https://twitter.com/74th/status/1823146532520239136
+
 ## feature
 
 - Uses CH217 as the power switch.
