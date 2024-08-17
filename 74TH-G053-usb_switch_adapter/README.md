@@ -24,9 +24,12 @@ Switchable adapter for 5V USB-C devices that allows power shutdown with a switch
 - 2A 以上の過電流によるリセッタフューズとしても機能する（2A）。過電流自は、LED が点滅する。
 - 制御マイコンとして、WCH CH32V003J4M6 を使用。ファームウェアを書き換えることで、様々な機能を追加できる。
 
-## BOM
+## 1.1.0
 
-### v1.1.0
+- Semantics [PDF](./usb_switch_adapter-semantics-1.1.0.pdf) [Kicanvas](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2F74th%2F74th-oshw-projects%2Fblob%2Fusb-switch-adapter%2F1.1.0%2Fusb_switch_adapter%2Fusb_switch_adapter.kicad_sch)
+- PCB [Kicanvas](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2F74th%2F74th-oshw-projects%2Fblob%2Fusb-switch-adapter%2F1.1.0%2Fusb_switch_adapter%2Fusb_switch_adapter.kicad_pcb)
+
+## BOM
 
 | Reference | Name                                             | Quantity |
 | --------- | ------------------------------------------------ | -------- |
