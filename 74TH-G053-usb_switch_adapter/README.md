@@ -26,7 +26,7 @@ Switchable adapter for 5V USB-C devices that allows power shutdown with a switch
 
 ## 1.1.0
 
-- Semantics [PDF](./usb_switch_adapter-semantics-1.1.0.pdf) [Kicanvas](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2F74th%2F74th-oshw-projects%2Fblob%2Fusb-switch-adapter%2F1.1.0%2Fusb_switch_adapter%2Fusb_switch_adapter.kicad_sch)
+- Semantics [PDF](./usb_switch_adapter-semantics-1.1.0.pdf) [Kicanvas](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2F74th%2F74th-oshw-projects%2Fblob%2F125ec0107b9b35aba094cce666c352a432412de6%2F74TH-G053-usb_switch_adapter%2Fusb_switch_adapter.kicad_sch)
 - PCB [Kicanvas](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2F74th%2F74th-oshw-projects%2Fblob%2Fusb-switch-adapter%2F1.1.0%2Fusb_switch_adapter%2Fusb_switch_adapter.kicad_pcb)
 
 ## BOM
