@@ -2651,7 +2651,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 163.83) (xy 62.23 163.83)
+			(xy 44.45 163.83) (xy 52.07 163.83)
 		)
 		(stroke
 			(width 0)
@@ -2841,7 +2841,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 156.21) (xy 62.23 158.75)
+			(xy 52.07 156.21) (xy 52.07 158.75)
 		)
 		(stroke
 			(width 0)
@@ -2911,7 +2911,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 158.75) (xy 54.61 158.75)
+			(xy 52.07 158.75) (xy 44.45 158.75)
 		)
 		(stroke
 			(width 0)
@@ -2971,7 +2971,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 163.83) (xy 62.23 168.91)
+			(xy 52.07 163.83) (xy 52.07 168.91)
 		)
 		(stroke
 			(width 0)
@@ -3041,7 +3041,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 161.29) (xy 69.85 161.29)
+			(xy 44.45 161.29) (xy 59.69 161.29)
 		)
 		(stroke
 			(width 0)
@@ -3334,7 +3334,7 @@
 		)
 		(uuid "1eb39aa0-44bd-4ce6-9813-4f6faf40bafc")
 	)
-	(text "Downstream"
+	(text "Switch"
 		(exclude_from_sim no)
 		(at 217.17 15.748 0)
 		(effects
@@ -3344,6 +3344,39 @@
 			(justify left top)
 		)
 		(uuid "2df1940f-13ee-4f26-ab4c-f5c0b410f134")
+	)
+	(text "MCU SWD-1wire"
+		(exclude_from_sim no)
+		(at 14.732 128.27 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left top)
+		)
+		(uuid "63dcc9d9-4aab-4dfa-880b-c998b2ed32f3")
+	)
+	(text "LED"
+		(exclude_from_sim no)
+		(at 217.932 74.676 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left top)
+		)
+		(uuid "7fc207a7-a493-43ff-915d-b3540503f581")
+	)
+	(text "MCU"
+		(exclude_from_sim no)
+		(at 87.884 129.032 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left top)
+		)
+		(uuid "cb2484dd-c80c-4ed5-b621-fe10e5c9cebd")
 	)
 	(text "Downstream"
 		(exclude_from_sim no)
@@ -3555,7 +3588,7 @@
 		(uuid "cb546b40-2896-4f9e-8bf2-20204e041d0b")
 	)
 	(label "SWDIO"
-		(at 69.85 161.29 180)
+		(at 59.69 161.29 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3884,7 +3917,7 @@
 	)
 	(symbol
 		(lib_id "74th_Interface:SWD_WCH-1Wire_WITH-VCC")
-		(at 48.26 161.29 0)
+		(at 38.1 161.29 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3892,7 +3925,7 @@
 		(dnp no)
 		(uuid "22941e6e-9f63-47e9-9e3a-9a70c215c688")
 		(property "Reference" "CH1"
-			(at 48.26 152.4 0)
+			(at 38.1 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3900,7 +3933,7 @@
 			)
 		)
 		(property "Value" "SWD 1Wire"
-			(at 48.26 154.94 0)
+			(at 38.1 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3908,7 +3941,7 @@
 			)
 		)
 		(property "Footprint" "74th:PinOut_Pin_3_3GND"
-			(at 45.72 156.21 0)
+			(at 35.56 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3917,7 +3950,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 45.72 156.21 0)
+			(at 35.56 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3926,7 +3959,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 48.26 161.29 0)
+			(at 38.1 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4927,7 +4960,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 62.23 156.21 0)
+		(at 52.07 156.21 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4936,7 +4969,7 @@
 		(fields_autoplaced yes)
 		(uuid "c3e0a0dc-0581-4533-b90f-eefc4196e673")
 		(property "Reference" "#PWR04"
-			(at 62.23 160.02 0)
+			(at 52.07 160.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4945,7 +4978,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 62.23 151.13 0)
+			(at 52.07 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4953,7 +4986,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 62.23 156.21 0)
+			(at 52.07 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4962,7 +4995,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 62.23 156.21 0)
+			(at 52.07 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4971,7 +5004,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 62.23 156.21 0)
+			(at 52.07 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5287,7 +5320,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 62.23 168.91 0)
+		(at 52.07 168.91 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5296,7 +5329,7 @@
 		(fields_autoplaced yes)
 		(uuid "fd60da5a-d76a-4e87-9506-f1fad87792d1")
 		(property "Reference" "#PWR08"
-			(at 62.23 175.26 0)
+			(at 52.07 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5305,7 +5338,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 62.23 173.99 0)
+			(at 52.07 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5313,7 +5346,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 62.23 168.91 0)
+			(at 52.07 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5322,7 +5355,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 62.23 168.91 0)
+			(at 52.07 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5331,7 +5364,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 62.23 168.91 0)
+			(at 52.07 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
