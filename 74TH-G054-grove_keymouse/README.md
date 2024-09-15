@@ -8,7 +8,7 @@ CH9329 の使い方は、https://www.marutsu.co.jp/contents/shop/marutsu/datashe
 
 ## ピン配置
 
-![ピン配置](./grove_keymouse.png)
+![ピン配置](./GroveKeyMouse-PinMap.png)
 
 CH9329 の電源は、USB 側から供給されます。
 
