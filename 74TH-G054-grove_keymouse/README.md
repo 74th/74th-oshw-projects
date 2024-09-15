@@ -14,6 +14,9 @@ CH9329 の電源は、USB 側から供給されます。
 
 ## v1.0.0
 
+- 回路図: [PDF](./grove_keymouse-v1.0.0-semantics.pdf) [KiCanvas](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2F74th%2F74th-oshw-projects%2Fblob%2Fgrove-keymouse%2F1.0.0%2F74TH-G054-grove_keymouse%2Fgrove_keymouse.kicad_sch)
+- PCB: [KiCanvas](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2F74th%2F74th-oshw-projects%2Fblob%2Fgrove-keymouse%2F1.0.0%2F74TH-G054-grove_keymouse%2Fgrove_keymouse.kicad_pcb)
+
 ### BOM
 
 | Reference | Name                                        | Package         | Quantity |
