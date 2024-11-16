@@ -37,7 +37,7 @@ Switchable adapter for 5V USB-C devices that allows power shutdown with a switch
 | D1        | LED 0805 Blue                                    | 1        |
 | J1        | USB Type-C Receptacle                            | 1        |
 | J2        | USB Type-C Receptacle                            | 1        |
-| R1        | Register 0603 56kΩ                               | 1        |
+| R1        | Register 0603 30kΩ                               | 1        |
 | R2        | Register 0603 10kΩ                               | 1        |
 | SW1       | Cheery MX Compatible Switch or Kailh Choc Switch | 1        |
 | U1        | USB Power Protection IC SOT-23-6L CH217K         | 1        |
