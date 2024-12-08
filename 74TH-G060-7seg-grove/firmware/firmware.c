@@ -3,18 +3,18 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#define LED_A_PIN GPIOv_from_PORT_PIN(GPIO_port_D, 3)  // 7
-#define LED_B_PIN GPIOv_from_PORT_PIN(GPIO_port_D, 5)  // 6
-#define LED_C_PIN GPIOv_from_PORT_PIN(GPIO_port_D, 6)  // 4
-#define LED_D_PIN GPIOv_from_PORT_PIN(GPIO_port_D, 4)  // 2
-#define LED_E_PIN GPIOv_from_PORT_PIN(GPIO_port_C, 5)  // 1
-#define LED_F_PIN GPIOv_from_PORT_PIN(GPIO_port_C, 6)  // 9
-#define LED_G_PIN GPIOv_from_PORT_PIN(GPIO_port_C, 7)  // 10
-#define LED_DP_PIN GPIOv_from_PORT_PIN(GPIO_port_C, 0) // 5
-#define SEL1_PIN GPIOv_from_PORT_PIN(GPIO_port_A, 2)
-#define SEL2_PIN GPIOv_from_PORT_PIN(GPIO_port_A, 1)
-#define SEL3_PIN GPIOv_from_PORT_PIN(GPIO_port_C, 4)
-#define SEL4_PIN GPIOv_from_PORT_PIN(GPIO_port_D, 2)
+#define LED_A_PIN PC6  // 7SEG 7
+#define LED_B_PIN PC5  // 7SEG 6
+#define LED_C_PIN PC4  // 7SEG 4
+#define LED_D_PIN PA1  // 7SEG 2
+#define LED_E_PIN PD3  // 7SEG 1
+#define LED_F_PIN PD2  // 7SEG 9
+#define LED_G_PIN PC7  // 7SEG 10
+#define LED_DP_PIN PC3 // 7SEG 5
+#define SEL1_PIN PC0
+#define SEL2_PIN PD4
+#define SEL3_PIN PD5
+#define SEL4_PIN PD6
 
 #define SEGPATTERN_0 0b00111111
 #define SEGPATTERN_1 0b00000110
@@ -130,9 +130,7 @@ void I2C1_EV_IRQHandler(void)
 	STAR1 = I2C1->STAR1;
 	STAR2 = I2C1->STAR2;
 
-#ifdef FUNCONF_USE_UARTPRINTF
-	printf("EV STAR1: 0x%04x STAR2: 0x%04x\r\n", STAR1, STAR2);
-#endif
+	// printf("EV STAR1: 0x%04x STAR2: 0x%04x\r\n", STAR1, STAR2);
 
 	I2C1->CTLR1 |= I2C_CTLR1_ACK;
 
@@ -214,9 +212,7 @@ void I2C1_ER_IRQHandler(void)
 {
 	uint16_t STAR1 = I2C1->STAR1;
 
-#ifdef FUNCONF_USE_UARTPRINTF
-	printf("ER STAR1: 0x%04x\r\n", STAR1);
-#endif
+	// printf("ER STAR1: 0x%04x\r\n", STAR1);
 
 	if (STAR1 & I2C_STAR1_BERR)			  // 0x0100
 	{									  // Bus error
@@ -264,6 +260,7 @@ void output_led()
 
 void on_write(uint8_t reg, uint8_t length)
 {
+	// TODO
 }
 
 void setup()
@@ -398,7 +395,7 @@ void demo_mode()
 		i2c_registers[IO_BASE + 3] = v;
 	}
 
-	print_bits(i2c_registers[IO_BASE + 0]);
+	// print_bits(i2c_registers[IO_BASE + 0]);
 
 	step++;
 	if (step >= 20)
@@ -427,7 +424,6 @@ void main_loop()
 int main()
 {
 	SystemInit();
-	funGpioInitAll();
 
 	setup();
 	printf("Start!");
