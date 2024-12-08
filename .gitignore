@@ -16,6 +16,8 @@ fp-info-cache
 *.net
 *.dsn
 *.ses
+*.lst
+*.map
 logs
 \#auto_saved_files\#
 *.lck
