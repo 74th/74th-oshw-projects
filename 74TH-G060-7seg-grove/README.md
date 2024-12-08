@@ -11,6 +11,7 @@ This module allows you to control four 7-segment LEDs using I2C signals through 
 
 - Semantics: [kicanvas](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2F74th%2F74th-oshw-projects%2Fblob%2Fmain%2F74TH-G060-7seg-grove%2F74TH-G060-7seg-grove.kicad_sch)
 - PCB: [kicanvas](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2F74th%2F74th-oshw-projects%2Fblob%2Fmain%2F74TH-G060-7seg-grove%2F74TH-G060-7seg-grove.kicad_pcb)
+- Firmware: [./firmware (using ch32v003fun)](./firmware)
 
 ## I2C Protocol
 
