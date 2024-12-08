@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "USB MM-CF Adapter")
-		(rev "v1.0.1")
+		(rev "v1.0.2")
 		(company "Atsushi Morimoto (@74th)")
 	)
 	(lib_symbols
@@ -993,16 +993,6 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 50.8) (xy 129.54 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0d520516-db90-44a7-840f-3298d2cac7e1")
-	)
-	(wire
-		(pts
 			(xy 100.33 59.69) (xy 129.54 59.69)
 		)
 		(stroke
@@ -1010,6 +1000,16 @@
 			(type default)
 		)
 		(uuid "162a2b36-f68d-444e-b1af-0317fd8e9a58")
+	)
+	(wire
+		(pts
+			(xy 91.44 50.8) (xy 50.8 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "367fd260-b183-470d-a13b-eaf666d75d66")
 	)
 	(wire
 		(pts
@@ -1040,6 +1040,16 @@
 			(type default)
 		)
 		(uuid "6235e836-325c-4774-854e-57c3f5f4782d")
+	)
+	(wire
+		(pts
+			(xy 50.8 48.26) (xy 93.98 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63219aef-3b33-456e-9c65-4cca14b4d807")
 	)
 	(wire
 		(pts
@@ -1083,13 +1093,13 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 48.26) (xy 129.54 48.26)
+			(xy 96.52 53.34) (xy 91.44 53.34)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "91ecc072-3744-4ac7-becb-7d5e63b8ddbc")
+		(uuid "9ffb3beb-842b-4659-b1f8-48b13cfbce91")
 	)
 	(wire
 		(pts
@@ -1133,6 +1143,46 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 48.26) (xy 96.52 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cdc7d2d4-467d-4b42-b50f-f5f767a4c340")
+	)
+	(wire
+		(pts
+			(xy 93.98 48.26) (xy 93.98 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8bb2b53-56c4-4267-8f35-3b0a6f573f92")
+	)
+	(wire
+		(pts
+			(xy 93.98 50.8) (xy 129.54 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e528a819-c46e-43ce-8025-659ebc9b2544")
+	)
+	(wire
+		(pts
+			(xy 96.52 48.26) (xy 96.52 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eae22953-c845-4032-92d8-458f3a129a9a")
+	)
+	(wire
+		(pts
 			(xy 63.5 64.77) (xy 63.5 63.5)
 		)
 		(stroke
@@ -1140,6 +1190,16 @@
 			(type default)
 		)
 		(uuid "eae532d1-1d93-469b-b32e-253bbf0a90e8")
+	)
+	(wire
+		(pts
+			(xy 91.44 53.34) (xy 91.44 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe6cae48-0383-48ae-bb26-93fd8fe71158")
 	)
 	(symbol
 		(lib_id "power:GND")
