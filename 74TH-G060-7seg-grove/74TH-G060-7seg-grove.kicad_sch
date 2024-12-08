@@ -5786,7 +5786,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "74th:Connector_HY-2.0_SMD_4Pin"
+		(property "Footprint" "74th:Connector_Grove_or_Qwiic"
 			(at 53.34 46.99 0)
 			(effects
 				(font
