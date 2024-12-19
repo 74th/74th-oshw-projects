@@ -306,8 +306,7 @@ void set_num(uint8_t pos, uint8_t num)
 void update_int()
 {
 	uint16_t num = i2c_registers[INT_BASE] << 8 | i2c_registers[INT_BASE + 1];
-	printf("@@1 %x, %x\r\n", i2c_registers[INT_BASE], i2c_registers[INT_BASE + 1]);
-	printf("update_int %d\r\n", num);
+	// printf("update_int %d\r\n", num);
 
 	if (num > 1000)
 	{
@@ -338,7 +337,7 @@ void update_int()
 
 void on_write(uint8_t reg, uint8_t length)
 {
-	printf("do_mosi_event %d:%d\r\n", reg, reg + length);
+	// printf("do_mosi_event %d:%d\r\n", reg, reg + length);
 	for (uint8_t r = reg; r < reg + length; r++)
 	{
 		switch (reg)
@@ -414,7 +413,7 @@ void demo_mode()
 		return;
 	}
 
-	printf("demo step: %d\r\n", step);
+	// printf("demo step: %d\r\n", step);
 
 	if (step < 8)
 	{
