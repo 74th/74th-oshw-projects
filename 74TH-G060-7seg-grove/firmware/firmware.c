@@ -3,14 +3,14 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#define LED_A_PIN PC6  // 7SEG 7
-#define LED_B_PIN PC5  // 7SEG 6
-#define LED_C_PIN PC4  // 7SEG 4
-#define LED_D_PIN PA1  // 7SEG 2
-#define LED_E_PIN PD3  // 7SEG 1
-#define LED_F_PIN PD2  // 7SEG 9
-#define LED_G_PIN PC7  // 7SEG 10
-#define LED_DP_PIN PC3 // 7SEG 5
+#define LED_A_PIN PC4  // 7SEG 7
+#define LED_B_PIN PC3  // 7SEG 6
+#define LED_C_PIN PD3  // 7SEG 4
+#define LED_D_PIN PD2  // 7SEG 2
+#define LED_E_PIN PC7  // 7SEG 1
+#define LED_F_PIN PC5  // 7SEG 9
+#define LED_G_PIN PC6  // 7SEG 10
+#define LED_DP_PIN PA1 // 7SEG 5
 #define SEL1_PIN PC0
 #define SEL2_PIN PD4
 #define SEL3_PIN PD5
@@ -36,7 +36,7 @@
 #define MODULE_LED_NUM 8
 #define MODULE_NUM 4
 
-#define DEMO_MODE 1
+#define DEMO_MODE 0
 
 uint16_t LED_PINS[MODULE_LED_NUM] = {LED_A_PIN, LED_B_PIN, LED_C_PIN, LED_D_PIN, LED_E_PIN, LED_F_PIN, LED_G_PIN, LED_DP_PIN};
 uint16_t SEL_PINS[MODULE_NUM] = {SEL1_PIN, SEL2_PIN, SEL3_PIN, SEL4_PIN};
@@ -244,7 +244,11 @@ void output_led()
 {
 	for (int m = 0; m < MODULE_NUM; m++)
 	{
-		funDigitalWrite(SEL_PINS[m], 0);
+		// funDigitalWrite(SEL_PINS[m], 0);
+		for (int n = 0; n < MODULE_LED_NUM; n++)
+		{
+			funDigitalWrite(SEL_PINS[n], n != m);
+		}
 
 		uint8_t v = i2c_registers[IO_BASE + m];
 
@@ -253,8 +257,12 @@ void output_led()
 			uint8_t b = (v >> l);
 			funDigitalWrite(LED_PINS[l], ((v >> l) & 1));
 		}
-		Delay_Us(100);
-		funDigitalWrite(SEL_PINS[m], 1);
+		Delay_Us(1500);
+		// funDigitalWrite(SEL_PINS[m], 1);
+		for (int n = 0; n < MODULE_LED_NUM; n++)
+		{
+			funDigitalWrite(SEL_PINS[n], 1);
+		}
 	}
 }
 
@@ -295,7 +303,7 @@ void setup()
 	Delay_Ms(10);
 }
 
-#define STEP_US 300000
+#define STEP_US 600000
 uint32_t start_us = 0;
 
 bool is_step_timing()
@@ -337,17 +345,17 @@ void demo_mode()
 	}
 	if (step == 8)
 	{
-		i2c_registers[IO_BASE + 0] = 0x00;
-		i2c_registers[IO_BASE + 1] = 0xff;
-		i2c_registers[IO_BASE + 2] = 0x00;
+		i2c_registers[IO_BASE + 0] = 0xFF;
+		i2c_registers[IO_BASE + 1] = 0x00;
+		i2c_registers[IO_BASE + 2] = 0xFF;
 		i2c_registers[IO_BASE + 3] = 0x00;
 	}
 	if (step == 9)
 	{
-		i2c_registers[IO_BASE + 0] = 0xff;
-		i2c_registers[IO_BASE + 1] = 0x00;
+		i2c_registers[IO_BASE + 0] = 0x00;
+		i2c_registers[IO_BASE + 1] = 0xFF;
 		i2c_registers[IO_BASE + 2] = 0x00;
-		i2c_registers[IO_BASE + 3] = 0x00;
+		i2c_registers[IO_BASE + 3] = 0xFF;
 	}
 	if (step > 9)
 	{
