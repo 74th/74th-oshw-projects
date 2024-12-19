@@ -257,7 +257,7 @@ void output_led()
 			uint8_t b = (v >> l);
 			funDigitalWrite(LED_PINS[l], ((v >> l) & 1));
 		}
-		Delay_Us(500);
+		Delay_Us(100);
 
 		for (int l = 0; l < MODULE_LED_NUM; l++)
 		{
