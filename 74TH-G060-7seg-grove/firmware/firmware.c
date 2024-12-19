@@ -266,8 +266,88 @@ void output_led()
 	}
 }
 
+void set_num(uint8_t pos, uint8_t num)
+{
+	switch (num)
+	{
+	case 0:
+		i2c_registers[IO_BASE + pos] = SEGPATTERN_0;
+		break;
+	case 1:
+		i2c_registers[IO_BASE + pos] = SEGPATTERN_1;
+		break;
+	case 2:
+		i2c_registers[IO_BASE + pos] = SEGPATTERN_2;
+		break;
+	case 3:
+		i2c_registers[IO_BASE + pos] = SEGPATTERN_3;
+		break;
+	case 4:
+		i2c_registers[IO_BASE + pos] = SEGPATTERN_4;
+		break;
+	case 5:
+		i2c_registers[IO_BASE + pos] = SEGPATTERN_5;
+		break;
+	case 6:
+		i2c_registers[IO_BASE + pos] = SEGPATTERN_6;
+		break;
+	case 7:
+		i2c_registers[IO_BASE + pos] = SEGPATTERN_7;
+		break;
+	case 8:
+		i2c_registers[IO_BASE + pos] = SEGPATTERN_8;
+		break;
+	case 9:
+		i2c_registers[IO_BASE + pos] = SEGPATTERN_9;
+		break;
+	}
+}
+
+void update_int()
+{
+	uint16_t num = i2c_registers[INT_BASE] << 8 | i2c_registers[INT_BASE + 1];
+	printf("@@1 %x, %x\r\n", i2c_registers[INT_BASE], i2c_registers[INT_BASE + 1]);
+	printf("update_int %d\r\n", num);
+
+	if (num > 1000)
+	{
+		set_num(0, num / 1000);
+	}
+	else
+	{
+		i2c_registers[IO_BASE + 0] = 0x00;
+	}
+	if (num > 100)
+	{
+		set_num(1, (num / 100) % 10);
+	}
+	else
+	{
+		i2c_registers[IO_BASE + 1] = 0x00;
+	}
+	if (num > 10)
+	{
+		set_num(2, (num / 10) % 10);
+	}
+	else
+	{
+		i2c_registers[IO_BASE + 2] = 0x00;
+	}
+	set_num(3, num % 10);
+}
+
 void on_write(uint8_t reg, uint8_t length)
 {
+	printf("do_mosi_event %d:%d\r\n", reg, reg + length);
+	for (uint8_t r = reg; r < reg + length; r++)
+	{
+		switch (reg)
+		{
+		case INT_BASE:
+			update_int();
+			break;
+		}
+	}
 	// TODO
 }
 
