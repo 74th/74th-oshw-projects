@@ -16,6 +16,8 @@
 #define SEL3_PIN PD4
 #define SEL4_PIN PC0
 
+#define COMM_LED_PIN PA2
+
 #define SEGPATTERN_0 0b00111111
 #define SEGPATTERN_1 0b00000110
 #define SEGPATTERN_2 0b01011011
@@ -52,11 +54,6 @@ typedef struct
 
 void I2C1_EV_IRQHandler(void) __attribute__((interrupt));
 void I2C1_ER_IRQHandler(void) __attribute__((interrupt));
-
-uint32_t current_tick_us()
-{
-	return SysTick->CNT / DELAY_US_TIME;
-}
 
 void init_rcc(void)
 {
@@ -342,8 +339,12 @@ void update_int()
 	}
 }
 
+uint32_t comm_led_last_tick = 0;
+
 void on_write(uint8_t reg, uint8_t length)
 {
+	funDigitalWrite(COMM_LED_PIN, 0);
+
 	// printf("do_mosi_event %d:%d\r\n", reg, reg + length);
 	for (uint8_t r = reg; r < reg + length; r++)
 	{
@@ -354,7 +355,8 @@ void on_write(uint8_t reg, uint8_t length)
 			break;
 		}
 	}
-	// TODO
+
+	comm_led_last_tick = SysTick->CNT;
 }
 
 void setup()
@@ -374,6 +376,7 @@ void setup()
 		GPIO_pinMode(LED_PINS[l], GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
 		// funPinMode(LED_PINS[l], GPIO_Speed_10MHz | GPIO_CNF_OUT_PP);
 	}
+	GPIO_pinMode(COMM_LED_PIN, GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
 
 	Delay_Ms(1);
 
@@ -386,35 +389,46 @@ void setup()
 		funDigitalWrite(SEL_PINS[l], 0);
 	}
 
+	funDigitalWrite(COMM_LED_PIN, 1);
+
 	Delay_Ms(10);
 }
 
-#define STEP_US 600000
-uint32_t start_us = 0;
+#define STEP_TICK 600 * DELAY_MS_TIME
+uint32_t start_tick = 0;
 
 bool is_step_timing()
 {
-	uint32_t now_us = current_tick_us();
-	if (now_us < start_us)
+	uint32_t now_tick = SysTick->CNT;
+	if (now_tick < start_tick)
 	{
-		start_us = 0;
+		start_tick = 0;
 		return;
 	}
 
-	if (now_us - start_us > STEP_US)
+	if (now_tick - start_tick > STEP_TICK)
 	{
-		start_us = now_us;
+		start_tick = now_tick;
 		return true;
 	}
 
 	return false;
 }
 
+void turn_off_comm_led()
+{
+	uint32_t now_tick = SysTick->CNT;
+	if (comm_led_last_tick > 0 && (now_tick < comm_led_last_tick || now_tick - comm_led_last_tick > 10 * DELAY_MS_TIME))
+	{
+		funDigitalWrite(COMM_LED_PIN, 1);
+		comm_led_last_tick = 0;
+	}
+}
+
 int step = 0;
 
 void demo_mode()
 {
-
 	if (!is_step_timing())
 	{
 		return;
@@ -500,6 +514,7 @@ void demo_mode()
 
 void main_loop()
 {
+
 	if (on_mosi_event)
 	{
 		// printf("do_mosi_event\r\n");
@@ -513,6 +528,8 @@ void main_loop()
 	}
 
 	output_led();
+
+	turn_off_comm_led();
 }
 
 int main()
