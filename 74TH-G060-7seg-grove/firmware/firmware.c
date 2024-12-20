@@ -11,10 +11,10 @@
 #define LED_F_PIN PC5  // 7SEG 9
 #define LED_G_PIN PC6  // 7SEG 10
 #define LED_DP_PIN PA1 // 7SEG 5
-#define SEL1_PIN PC0
-#define SEL2_PIN PD4
-#define SEL3_PIN PD5
-#define SEL4_PIN PD6
+#define SEL1_PIN PD6
+#define SEL2_PIN PD5
+#define SEL3_PIN PD4
+#define SEL4_PIN PC0
 
 #define SEGPATTERN_0 0b00111111
 #define SEGPATTERN_1 0b00000110
@@ -315,31 +315,31 @@ void update_int()
 	uint16_t num = i2c_registers[INT_BASE] << 8 | i2c_registers[INT_BASE + 1];
 	// printf("update_int %d\r\n", num);
 
-	if (num > 1000)
+	set_num(0, num % 10);
+	if (num > 10)
 	{
-		set_num(0, num / 1000);
-	}
-	else
-	{
-		i2c_registers[IO_BASE + 0] = 0x00;
-	}
-	if (num > 100)
-	{
-		set_num(1, (num / 100) % 10);
+		set_num(1, (num / 10) % 10);
 	}
 	else
 	{
 		i2c_registers[IO_BASE + 1] = 0x00;
 	}
-	if (num > 10)
+	if (num > 100)
 	{
-		set_num(2, (num / 10) % 10);
+		set_num(2, (num / 100) % 10);
 	}
 	else
 	{
 		i2c_registers[IO_BASE + 2] = 0x00;
 	}
-	set_num(3, num % 10);
+	if (num > 1000)
+	{
+		set_num(3, num / 1000);
+	}
+	else
+	{
+		i2c_registers[IO_BASE + 3] = 0x00;
+	}
 }
 
 void on_write(uint8_t reg, uint8_t length)

@@ -73,11 +73,11 @@ void program1()
     uint8_t msg[5] = {0x00};
     if (step % 2 == 0)
     {
-        msg[((step % 8) / 2) + 1] = 0x30;
+        msg[((step % 8) / 2) + 1] = 0x06;
     }
     else
     {
-        msg[((step % 8) / 2) + 1] = 0x06;
+        msg[((step % 8) / 2) + 1] = 0x30;
     }
 
     Wire.beginTransmission(SEG7_ADDR);
