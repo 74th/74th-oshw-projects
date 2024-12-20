@@ -25,9 +25,9 @@ This module allows you to control four 7-segment LEDs using I2C signals through 
 | 0x01    | Direct IO for LED 2                                 | R/W | 0x00  |
 | 0x02    | Direct IO for LED 3                                 | R/W | 0x00  |
 | 0x03    | Direct IO for LED 4                                 | R/W | 0x00  |
-| 0x10    | Number uint16 input(Upper bit) (Not Impremented)    | W   | 0x00  |
-| 0x11    | Number uint16 input(lower bit) (Not Impremented)    | W   | 0x00  |
-| 0x12    | Point location(0x00 is OFF)       (Not Impremented) | W   | 0x00  |
+| 0x10    | Number uint16 input(Upper bit)                      | W   | 0x00  |
+| 0x11    | Number uint16 input(lower bit)                      | W   | 0x00  |
+| 0x12    | Point location(0x00 is OFF) (Not Impremented)       | W   | 0x00  |
 | 0x20-26 | Charactor input (Not Impremented)                   | W   | 0x00  |
 
 #### Direct IO bits

@@ -3,18 +3,20 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#define LED_A_PIN PC6  // 7SEG 7
-#define LED_B_PIN PC5  // 7SEG 6
-#define LED_C_PIN PC4  // 7SEG 4
-#define LED_D_PIN PA1  // 7SEG 2
-#define LED_E_PIN PD3  // 7SEG 1
-#define LED_F_PIN PD2  // 7SEG 9
-#define LED_G_PIN PC7  // 7SEG 10
-#define LED_DP_PIN PC3 // 7SEG 5
-#define SEL1_PIN PC0
-#define SEL2_PIN PD4
-#define SEL3_PIN PD5
-#define SEL4_PIN PD6
+#define LED_A_PIN PC4  // 7SEG 7
+#define LED_B_PIN PC3  // 7SEG 6
+#define LED_C_PIN PD3  // 7SEG 4
+#define LED_D_PIN PD2  // 7SEG 2
+#define LED_E_PIN PC7  // 7SEG 1
+#define LED_F_PIN PC5  // 7SEG 9
+#define LED_G_PIN PC6  // 7SEG 10
+#define LED_DP_PIN PA1 // 7SEG 5
+#define SEL1_PIN PD6
+#define SEL2_PIN PD5
+#define SEL3_PIN PD4
+#define SEL4_PIN PC0
+
+#define COMM_LED_PIN PA2
 
 #define SEGPATTERN_0 0b00111111
 #define SEGPATTERN_1 0b00000110
@@ -36,7 +38,7 @@
 #define MODULE_LED_NUM 8
 #define MODULE_NUM 4
 
-#define DEMO_MODE 1
+#define DEMO_MODE 0
 
 uint16_t LED_PINS[MODULE_LED_NUM] = {LED_A_PIN, LED_B_PIN, LED_C_PIN, LED_D_PIN, LED_E_PIN, LED_F_PIN, LED_G_PIN, LED_DP_PIN};
 uint16_t SEL_PINS[MODULE_NUM] = {SEL1_PIN, SEL2_PIN, SEL3_PIN, SEL4_PIN};
@@ -52,11 +54,6 @@ typedef struct
 
 void I2C1_EV_IRQHandler(void) __attribute__((interrupt));
 void I2C1_ER_IRQHandler(void) __attribute__((interrupt));
-
-uint32_t current_tick_us()
-{
-	return SysTick->CNT / DELAY_US_TIME;
-}
 
 void init_rcc(void)
 {
@@ -244,7 +241,11 @@ void output_led()
 {
 	for (int m = 0; m < MODULE_NUM; m++)
 	{
-		funDigitalWrite(SEL_PINS[m], 0);
+		// funDigitalWrite(SEL_PINS[m], 0);
+		for (int n = 0; n < MODULE_LED_NUM; n++)
+		{
+			funDigitalWrite(SEL_PINS[n], n != m);
+		}
 
 		uint8_t v = i2c_registers[IO_BASE + m];
 
@@ -254,13 +255,108 @@ void output_led()
 			funDigitalWrite(LED_PINS[l], ((v >> l) & 1));
 		}
 		Delay_Us(100);
-		funDigitalWrite(SEL_PINS[m], 1);
+
+		for (int l = 0; l < MODULE_LED_NUM; l++)
+		{
+			uint8_t b = (v >> l);
+			funDigitalWrite(LED_PINS[l], 0);
+		}
+
+		// funDigitalWrite(SEL_PINS[m], 1);
+		for (int n = 0; n < MODULE_LED_NUM; n++)
+		{
+			funDigitalWrite(SEL_PINS[n], 1);
+		}
 	}
 }
 
+void set_num(uint8_t pos, uint8_t num)
+{
+	switch (num)
+	{
+	case 0:
+		i2c_registers[IO_BASE + pos] = SEGPATTERN_0;
+		break;
+	case 1:
+		i2c_registers[IO_BASE + pos] = SEGPATTERN_1;
+		break;
+	case 2:
+		i2c_registers[IO_BASE + pos] = SEGPATTERN_2;
+		break;
+	case 3:
+		i2c_registers[IO_BASE + pos] = SEGPATTERN_3;
+		break;
+	case 4:
+		i2c_registers[IO_BASE + pos] = SEGPATTERN_4;
+		break;
+	case 5:
+		i2c_registers[IO_BASE + pos] = SEGPATTERN_5;
+		break;
+	case 6:
+		i2c_registers[IO_BASE + pos] = SEGPATTERN_6;
+		break;
+	case 7:
+		i2c_registers[IO_BASE + pos] = SEGPATTERN_7;
+		break;
+	case 8:
+		i2c_registers[IO_BASE + pos] = SEGPATTERN_8;
+		break;
+	case 9:
+		i2c_registers[IO_BASE + pos] = SEGPATTERN_9;
+		break;
+	}
+}
+
+void update_int()
+{
+	uint16_t num = i2c_registers[INT_BASE] << 8 | i2c_registers[INT_BASE + 1];
+	// printf("update_int %d\r\n", num);
+
+	set_num(0, num % 10);
+	if (num > 10)
+	{
+		set_num(1, (num / 10) % 10);
+	}
+	else
+	{
+		i2c_registers[IO_BASE + 1] = 0x00;
+	}
+	if (num > 100)
+	{
+		set_num(2, (num / 100) % 10);
+	}
+	else
+	{
+		i2c_registers[IO_BASE + 2] = 0x00;
+	}
+	if (num > 1000)
+	{
+		set_num(3, num / 1000);
+	}
+	else
+	{
+		i2c_registers[IO_BASE + 3] = 0x00;
+	}
+}
+
+uint32_t comm_led_last_tick = 0;
+
 void on_write(uint8_t reg, uint8_t length)
 {
-	// TODO
+	funDigitalWrite(COMM_LED_PIN, 0);
+
+	// printf("do_mosi_event %d:%d\r\n", reg, reg + length);
+	for (uint8_t r = reg; r < reg + length; r++)
+	{
+		switch (reg)
+		{
+		case INT_BASE:
+			update_int();
+			break;
+		}
+	}
+
+	comm_led_last_tick = SysTick->CNT;
 }
 
 void setup()
@@ -280,6 +376,7 @@ void setup()
 		GPIO_pinMode(LED_PINS[l], GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
 		// funPinMode(LED_PINS[l], GPIO_Speed_10MHz | GPIO_CNF_OUT_PP);
 	}
+	GPIO_pinMode(COMM_LED_PIN, GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
 
 	Delay_Ms(1);
 
@@ -292,41 +389,52 @@ void setup()
 		funDigitalWrite(SEL_PINS[l], 0);
 	}
 
+	funDigitalWrite(COMM_LED_PIN, 1);
+
 	Delay_Ms(10);
 }
 
-#define STEP_US 300000
-uint32_t start_us = 0;
+#define STEP_TICK 600 * DELAY_MS_TIME
+uint32_t start_tick = 0;
 
 bool is_step_timing()
 {
-	uint32_t now_us = current_tick_us();
-	if (now_us < start_us)
+	uint32_t now_tick = SysTick->CNT;
+	if (now_tick < start_tick)
 	{
-		start_us = 0;
+		start_tick = 0;
 		return;
 	}
 
-	if (now_us - start_us > STEP_US)
+	if (now_tick - start_tick > STEP_TICK)
 	{
-		start_us = now_us;
+		start_tick = now_tick;
 		return true;
 	}
 
 	return false;
 }
 
+void turn_off_comm_led()
+{
+	uint32_t now_tick = SysTick->CNT;
+	if (comm_led_last_tick > 0 && (now_tick < comm_led_last_tick || now_tick - comm_led_last_tick > 10 * DELAY_MS_TIME))
+	{
+		funDigitalWrite(COMM_LED_PIN, 1);
+		comm_led_last_tick = 0;
+	}
+}
+
 int step = 0;
 
 void demo_mode()
 {
-
 	if (!is_step_timing())
 	{
 		return;
 	}
 
-	printf("demo step: %d\r\n", step);
+	// printf("demo step: %d\r\n", step);
 
 	if (step < 8)
 	{
@@ -337,17 +445,17 @@ void demo_mode()
 	}
 	if (step == 8)
 	{
-		i2c_registers[IO_BASE + 0] = 0x00;
-		i2c_registers[IO_BASE + 1] = 0xff;
-		i2c_registers[IO_BASE + 2] = 0x00;
+		i2c_registers[IO_BASE + 0] = 0xFF;
+		i2c_registers[IO_BASE + 1] = 0x00;
+		i2c_registers[IO_BASE + 2] = 0xFF;
 		i2c_registers[IO_BASE + 3] = 0x00;
 	}
 	if (step == 9)
 	{
-		i2c_registers[IO_BASE + 0] = 0xff;
-		i2c_registers[IO_BASE + 1] = 0x00;
+		i2c_registers[IO_BASE + 0] = 0x00;
+		i2c_registers[IO_BASE + 1] = 0xFF;
 		i2c_registers[IO_BASE + 2] = 0x00;
-		i2c_registers[IO_BASE + 3] = 0x00;
+		i2c_registers[IO_BASE + 3] = 0xFF;
 	}
 	if (step > 9)
 	{
@@ -406,6 +514,7 @@ void demo_mode()
 
 void main_loop()
 {
+
 	if (on_mosi_event)
 	{
 		// printf("do_mosi_event\r\n");
@@ -419,6 +528,8 @@ void main_loop()
 	}
 
 	output_led();
+
+	turn_off_comm_led();
 }
 
 int main()
