@@ -47,7 +47,7 @@ void program0()
         c = 0x04;
         break;
     case 3:
-        c = 0x08;
+        c = 0x88;
         break;
     case 4:
         c = 0x10;
