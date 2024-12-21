@@ -1,0 +1,13 @@
+{
+  "name": "7Seg Grove Sample for M5Stack Atom Lite",
+  "version": "1.0.0",
+  "home_assistant_domain": "74th",
+  "funding_url": "https://github.com/74th",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [{ "path": "./firmware.bin", "offset": 0 }]
+    }
+  ]
+}
