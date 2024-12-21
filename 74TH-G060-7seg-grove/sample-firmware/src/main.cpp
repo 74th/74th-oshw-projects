@@ -92,14 +92,14 @@ void program2()
 {
     pixels.setPixelColor(0, pixels.Color(0, 16, 0));
     pixels.show();
-    uint8_t msg[3] = {0x10, 0x00, 0x00};
+    uint8_t msg[4] = {0x10, 0x00, 0x00, 0x01};
     uint16_t num = step % 10000;
     msg[1] = num >> 8;
     msg[2] = num % 0x100;
     printf("Num: %x,%x\n", msg[1], msg[2]);
 
     Wire.beginTransmission(SEG7_ADDR);
-    Wire.write(msg, 3);
+    Wire.write(msg, 4);
     Wire.endTransmission();
     printf("Sent 1-%d\n", step);
 
