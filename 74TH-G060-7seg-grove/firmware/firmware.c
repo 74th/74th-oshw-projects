@@ -337,6 +337,19 @@ void update_int()
 	{
 		i2c_registers[IO_BASE + 3] = 0x00;
 	}
+
+	uint8_t point = i2c_registers[INT_BASE + 2];
+	for (int i = 0; i < 4; i++)
+	{
+		if (i == point)
+		{
+			i2c_registers[IO_BASE + i] |= 0x80;
+		}
+		else
+		{
+			i2c_registers[IO_BASE + i] &= ~(0x80);
+		}
+	}
 }
 
 uint32_t comm_led_last_tick = 0;
@@ -388,6 +401,8 @@ void setup()
 	{
 		funDigitalWrite(SEL_PINS[l], 0);
 	}
+
+	i2c_registers[INT_BASE + 2] = 0xFF;
 
 	funDigitalWrite(COMM_LED_PIN, 1);
 
