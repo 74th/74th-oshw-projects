@@ -59,9 +59,8 @@ example: [Sample Firmware (](./sample-firmware/)
 | --------- | ---------------------------------------------------- | --------------- | -------- |
 | C1        | Capacitor 100nF                                      | SMD I0603 M1608 | 1        |
 | C2-3      | Capacitor 10uF                                       | SMD I0603 M1608 | 2        |
-| CH2       | HY2.0 (Grove) or SH1.0 (Qwiic) Socket SMD 4Pin - I2C |                 | 1        |
+| CH2       | HY2.0 (Grove) or SH1.0 (Qwiic) Socket SMD 4Pin - I2C | SMD             | 1        |
 | D1        | LED LED                                              | SMD I0805 M2012 | 1        |
-| JP1       | Jumper INPUT 3V3                                     |                 | 1        |
 | R1-8      | Register 100Ω                                        | SMD I0603 M1608 | 8        |
 | R9        | Register 10kΩ                                        | SMD I0603 M1608 | 1        |
 | R10-11    | Register 1kΩ                                         | SMD I0603 M1608 | 2        |
