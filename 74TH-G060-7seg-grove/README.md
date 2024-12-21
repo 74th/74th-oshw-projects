@@ -2,20 +2,17 @@
 
 This module allows you to control four 7-segment LEDs using I2C signals through a Grove connector.
 
-> [!Caution]
-> WIP
+🇯🇵 7セグLEDをI2Cで制御するGroveモジュール
 
-![alt text](3d_render-2.png)
+<img src="photo-1.jpg" width="60%"/>
 
-![alt text](3d_render-1.png)
-
-- Semantics: [kicanvas](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2F74th%2F74th-oshw-projects%2Fblob%2Fmain%2F74TH-G060-7seg-grove%2F74TH-G060-7seg-grove.kicad_sch)
-- PCB: [kicanvas](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2F74th%2F74th-oshw-projects%2Fblob%2Fmain%2F74TH-G060-7seg-grove%2F74TH-G060-7seg-grove.kicad_pcb)
-- Firmware: [./firmware (using ch32v003fun)](./firmware)
+<img src="3d_render-2.png" width="40%"/> <img src="3d_render-1.png" width="40%"/>
 
 ## I2C Protocol
 
 - Address: 0x73
+
+example: [Sample Firmware (](./sample-firmware/)
 
 ### Registers
 
@@ -42,9 +39,21 @@ This module allows you to control four 7-segment LEDs using I2C signals through 
 
 <img src="7seg_map.drawio.svg" width="200px"/>
 
-## BOM
+## PCB Documents
 
 ### 1.0.0-1.0.1
+
+- 1.0.1（未発売）: Groveソケットの位置を微調整。回路図上のピンの名前を修正。
+  - semantics [PDF](semantics-1.0.1.pdf) [KiCanvas](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2F74th%2F74th-oshw-projects%2Fblob%2F7seg-grove%2F1.0.1%2F74TH-G060-7seg-grove%2F74TH-G060-7seg-grove.kicad_sch)
+  - PCB [KiCanvas](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2F74th%2F74th-oshw-projects%2Fblob%2F7seg-grove%2F1.0.1%2F74TH-G060-7seg-grove%2F74TH-G060-7seg-grove.kicad_pcb)
+- 1.0.0
+  - semantics [PDF](semantics-1.0.0.pdf) [KiCanvas](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2F74th%2F74th-oshw-projects%2Fblob%2F7seg-grove%2F1.0.0%2F74TH-G060-7seg-grove%2F74TH-G060-7seg-grove.kicad_sch)
+  - PCB [KiCanvas](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2F74th%2F74th-oshw-projects%2Fblob%2F7seg-grove%2F1.0.0%2F74TH-G060-7seg-grove%2F74TH-G060-7seg-grove.kicad_pcb)
+
+#### BOM
+
+- GroveポートからVCCに3.3Vを流す場合、U7を未実装にし、JP1を短絡してください
+- GroveポートからVCCに5Vを流す場合（M5Stackなど）、U7を実装にし、JP1を未接続にしてください
 
 | Reference | Name                                                 | Package         | Quantity |
 | --------- | ---------------------------------------------------- | --------------- | -------- |
@@ -60,3 +69,23 @@ This module allows you to control four 7-segment LEDs using I2C signals through 
 | U5        | MCU WCH CH32V003F4P6                                 | TSSOP20         | 1        |
 | U6        | USB Power Protection IC CH213K                       | SOT-23          | 1        |
 | U7        | Regulator 3.3V AMS1117-3.3                           | SOT-89          | 1        |
+
+## Firmware for CH32V003
+
+using ch32v003fun.
+
+[./firmware/](./firmware/)
+
+🇯🇵 キットに付属のCH32V003には、既に書き込んであります
+
+## Sample Firmware for M5Stack Atom Lite
+
+There is a sample firmware that allows you to see this module in action. It uses M5Stack Atom Lite.
+
+Please check [./sample-firmware/](./sample-firmware/) for how to write it.
+
+🇯🇵 このモジュールの動きを確認できるサンプルのファームウェアがあります。 M5Stack Atom Liteを使います。
+
+書き込み方法などは[./sample-firmware/](./sample-firmware/)を確認ください。
+
+[./sample-firmware/](./sample-firmware/)
