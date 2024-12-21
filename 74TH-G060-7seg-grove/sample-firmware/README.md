@@ -1,5 +1,4 @@
-Sample firmware for M5Stack Atom Lite
-
+# Sample firmware for M5Stack Atom Lite
 
 ## バイナリを直接書き込む方法
 
