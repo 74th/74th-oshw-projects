@@ -4,6 +4,10 @@
 	(generator_version "8.0")
 	(uuid "e0a12cc3-fc1c-4902-9f3a-6460933c3c18")
 	(paper "A4")
+	(title_block
+		(title "7Seg Grove")
+		(rev "1.0.1")
+	)
 	(lib_symbols
 		(symbol "74th_Display:7SegLED_OSL10561-LW"
 			(exclude_from_sim no)
