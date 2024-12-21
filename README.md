@@ -13,7 +13,7 @@
 
 ### Main project
 
-- 2024-12 [[74TH-G060]7Seg Grove](./74TH-G060-7seg-grove/): four 7-segment LEDs using the I2C protocol via Grove: Groveで
+- 2024-12 [[74TH-G060]7Seg Grove](./74TH-G060-7seg-grove/): four 7-segment LEDs using the I2C protocol via Grove: Grove I2Cで7セグLEDを制御できるモジュール。
 - 2024-08 [[74TH-G054]Grove Keymouse](./74TH-G054-grove_keymouse/): Grove UART device that uses CH9329 to act as keyboard and mouse via UART. CH9329 を使って UART 経由でキーボード、マウスとして振るわせる、Grove UART デバイス
 - 2024-07 [[74TH-G053]USB Switch Adapter](./74TH-G053-usb_switch_adapter/): スイッチを追加する USB アダプタ
 - 2024-06 [[74TH-G050]Grove Universal Board](./74TH-G050-grove_universal_board/): Grove デバイスを作るための小型ユニバーサル基板
