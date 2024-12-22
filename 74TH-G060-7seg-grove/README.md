@@ -8,6 +8,8 @@ This module allows you to control four 7-segment LEDs using I2C signals through 
 
 <img src="3d_render-2.png" width="40%"/> <img src="3d_render-1.png" width="40%"/>
 
+Movie tweet: https://x.com/74th/status/1870251968486355227
+
 ## I2C Protocol
 
 - Address: 0x73
@@ -88,3 +90,32 @@ Please check [./sample-firmware/](./sample-firmware/) for how to write it.
 書き込み方法などは[./sample-firmware/](./sample-firmware/)を確認ください。
 
 [./sample-firmware/](./sample-firmware/)
+
+## only use ch32v003 firmware
+
+Since the firmware has the following pinout, you can also just use the CH32V003F4P6 and this firmware without using this module. See the schematic for details.
+
+🇯🇵 以下のピン配置のファームウェアとなっているため、本モジュールを使わずに、CH32V003F4P6と本ファームウェアを使うだけを使うこともできます。詳しくは回路図を見てください。
+
+| Pin No | Pin   | Role                |
+| ------ | ----- | ------------------- |
+| 1      | PD4   | LED3 Cassode Common |
+| 2      | PD5   | LED2 Cassode Common |
+| 3      | PD6   | LED1 Cassode Common |
+| 4      | NRST  | - (Internal PullUp) |
+| 5      | PA1   | All LEDs SDP        |
+| 6      | PA2   | I2C Indicator LED   |
+| 7      | GND   | GND                 |
+| 8      | PD0   | -                   |
+| 9      | VDD   | 3.3V                |
+| 10     | PC0   | LED4 Cassode Common |
+| 11     | PC1   | I2C SDA             |
+| 12     | PC2   | I2C SCL             |
+| 13     | PC3   | All LEDs SB         |
+| 14     | PC4   | All LEDs SA         |
+| 15     | PC5   | All LEDs SF         |
+| 16     | PC6   | All LEDs SG         |
+| 17     | PC7   | All LEDs SE         |
+| 18     | SWDIO | SWDIO               |
+| 19     | PD2   | All LEDs SD         |
+| 20     | PD3   | All LEDs SC         |

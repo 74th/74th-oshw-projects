@@ -1,5 +1,13 @@
 # Sample firmware for M5Stack Atom Lite
 
+Movie tweet: https://x.com/74th/status/1870251968486355227
+
+ボタンを押すたびに以下の動作を切り替えます。
+
+1. ぐるぐる
+2. ライン移動
+3. カウントアップ
+
 ## バイナリを直接書き込む方法
 
 Web Toolを使って書き込む場合は、以下のURLにアクセスし、M5StackAtomをPCに接続した状態で、「7Seg Grove Sample for M5Stack Atom Lite」のConnectボタンを押し、デバイスの選択でM5Stackを選択し、インストールを進めてください。
