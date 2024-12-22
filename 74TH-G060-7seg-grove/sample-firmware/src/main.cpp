@@ -110,10 +110,38 @@ void program2()
     Wire.beginTransmission(SEG7_ADDR);
     Wire.write(msg, 4);
     Wire.endTransmission();
-    printf("Sent 1-%d\n", step);
+    printf("Sent 2-%d\n", step);
 
     step++;
 }
+
+void program3()
+{
+    pixels.setPixelColor(0, pixels.Color(0, 16, 0));
+    // 74th
+    uint8_t white_msg[5] = {
+        0x00,
+        0b01110100, // 7
+        0b01111000, // 4
+        0b01100110, // t
+        0b00000111, // h
+    };
+    uint8_t black_msg[5] = {0x00, 0x00, 0x00, 0x00, 0x00};
+    Wire.beginTransmission(SEG7_ADDR);
+    if ((step % 10) > 2)
+    {
+        Wire.write(white_msg, 5);
+    }
+    else
+    {
+        Wire.write(black_msg, 5);
+    }
+    Wire.endTransmission();
+    printf("Sent 3-%d\n", step);
+
+    step++;
+}
+
 void loop()
 {
     bool onTap = false;
@@ -129,7 +157,7 @@ void loop()
     {
         printf("Button pressed %d\n", programNum);
         programNum++;
-        if (programNum > 2)
+        if (programNum > 3)
         {
             programNum = 0;
         }
@@ -145,6 +173,9 @@ void loop()
         break;
     case 2:
         program2();
+        break;
+    case 3:
+        program3();
         break;
     }
 
