@@ -35,7 +35,7 @@ void program0()
     pixels.show();
 
     uint8_t c = 0;
-    switch (step % 6)
+    switch (step % 9)
     {
     case 0:
         c = 0x01;
@@ -44,15 +44,24 @@ void program0()
         c = 0x02;
         break;
     case 2:
-        c = 0x04;
+        c = 0x40;
         break;
     case 3:
-        c = 0x88;
-        break;
-    case 4:
         c = 0x10;
         break;
+    case 4:
+        c = 0x08;
+        break;
     case 5:
+        c = 0x80;
+        break;
+    case 6:
+        c = 0x04;
+        break;
+    case 7:
+        c = 0x40;
+        break;
+    case 8:
         c = 0x20;
         break;
     }
