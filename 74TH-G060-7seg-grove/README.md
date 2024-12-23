@@ -54,8 +54,10 @@ example: [Sample Firmware (](./sample-firmware/)
 
 #### BOM
 
-- GroveポートからVCCに3.3Vを流す場合、U7を未実装にし、JP1を短絡してください
-- GroveポートからVCCに5Vを流す場合（M5Stackなど）、U7を実装にし、JP1を未接続にしてください
+- 利用したいGroveポートの電源電圧にあわせて、実装してください
+  - VCCに3.3Vを流す場合: U7を未実装にし、JP1を短絡してください
+  - VCCに5Vを流す場合（M5Stackなど）: U7を実装にし、JP1を未接続にしてください
+- CH2 Groveソケットは、U1-4 7セグLEDより先に実装してください。7セグLEDは高さがあるため、はんだ付けが若干難しくなります。
 
 | Reference | Name                                                 | Package         | Quantity |
 | --------- | ---------------------------------------------------- | --------------- | -------- |
@@ -66,7 +68,7 @@ example: [Sample Firmware (](./sample-firmware/)
 | R1-8      | Register 100Ω                                        | SMD I0603 M1608 | 8        |
 | R9        | Register 10kΩ                                        | SMD I0603 M1608 | 1        |
 | R10-11    | Register 1kΩ                                         | SMD I0603 M1608 | 2        |
-| U1-4      | 7Seg LED                                             | TH              | 4        |
+| U1-4      | 7Seg LED OSL10561-LW                                 | TH              | 4        |
 | U5        | MCU WCH CH32V003F4P6                                 | TSSOP20         | 1        |
 | U6        | USB Power Protection IC CH213K                       | SOT-23          | 1        |
 | U7        | Regulator 3.3V AMS1117-3.3                           | SOT-89          | 1        |
