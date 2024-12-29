@@ -30,14 +30,16 @@ example: [Sample Firmware (](./sample-firmware/)
 
 #### Direct IO bits
 
-- bit 1: LED A(1: ON, 0: OFF)
-- bit 2: LED B(1: ON, 0: OFF)
-- bit 3: LED C(1: ON, 0: OFF)
-- bit 4: LED D(1: ON, 0: OFF)
-- bit 5: LED E(1: ON, 0: OFF)
-- bit 6: LED F(1: ON, 0: OFF)
-- bit 7: LED G(1: ON, 0: OFF)
-- bit 8: LED DP(1: ON, 0: OFF)
+| bit | Function              |
+| --- | --------------------- |
+| 1   | LED A(1: ON, 0: OFF)  |
+| 2   | LED B(1: ON, 0: OFF)  |
+| 3   | LED C(1: ON, 0: OFF)  |
+| 4   | LED D(1: ON, 0: OFF)  |
+| 5   | LED E(1: ON, 0: OFF)  |
+| 6   | LED F(1: ON, 0: OFF)  |
+| 7   | LED G(1: ON, 0: OFF)  |
+| 8   | LED DP(1: ON, 0: OFF) |
 
 <img src="7seg_map.drawio.svg" width="200px"/>
 
