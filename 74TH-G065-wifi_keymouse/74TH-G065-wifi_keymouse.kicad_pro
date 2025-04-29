@@ -58,7 +58,20 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "starved_thermal|56645000|60475000|cacb51ba-0e41-4a8f-9f9d-8fda77a1c44a|396b1369-dfff-4dc8-aed7-60ec16459b41|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|57230412|81480412|cacb51ba-0e41-4a8f-9f9d-8fda77a1c44a|6051e878-3929-42fe-a66d-b3d086dbbc36|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|65700000|72312500|cacb51ba-0e41-4a8f-9f9d-8fda77a1c44a|60e40e6a-959a-45b0-adb6-3bd5e4fce48d|B.Cu",
+          ""
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -139,7 +152,7 @@
         "min_track_width": 0.0,
         "min_via_annular_width": 0.05,
         "min_via_diameter": 0.2,
-        "solder_mask_to_copper_clearance": 0.0,
+        "solder_mask_to_copper_clearance": 0.005,
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
@@ -258,7 +271,12 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      [
+        "pin_to_pin|419100|1270000|8b74b243-72af-4816-97d0-411573ea3135|3eb449db-1971-4513-afcb-a484ac530f27|/ca7bd0e1-7950-4289-a115-39d355ebd8b2|/ca7bd0e1-7950-4289-a115-39d355ebd8b2|/ca7bd0e1-7950-4289-a115-39d355ebd8b2",
+        ""
+      ]
+    ],
     "meta": {
       "version": 0
     },
@@ -610,16 +628,46 @@
           "show": true
         },
         {
+          "group_by": true,
+          "label": "Value",
+          "name": "Value",
+          "show": true
+        },
+        {
+          "group_by": true,
+          "label": "Footprint",
+          "name": "Footprint",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Datasheet",
+          "name": "Datasheet",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "説明",
+          "name": "Description",
+          "show": false
+        },
+        {
           "group_by": false,
           "label": "Qty",
           "name": "${QUANTITY}",
           "show": true
         },
         {
-          "group_by": true,
-          "label": "Value",
-          "name": "Value",
-          "show": true
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Function",
+          "name": "Function",
+          "show": false
         },
         {
           "group_by": true,
@@ -638,26 +686,14 @@
           "label": "Exclude from Board",
           "name": "${EXCLUDE_FROM_BOARD}",
           "show": true
-        },
-        {
-          "group_by": true,
-          "label": "Footprint",
-          "name": "Footprint",
-          "show": true
-        },
-        {
-          "group_by": false,
-          "label": "Datasheet",
-          "name": "Datasheet",
-          "show": true
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": true,
-      "name": "Default Editing",
+      "name": "",
       "sort_asc": true,
-      "sort_field": "リファレンス"
+      "sort_field": "Reference"
     },
     "connection_grid_size": 50.0,
     "drawing": {
