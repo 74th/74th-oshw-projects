@@ -418,7 +418,7 @@ bool is_step_timing()
 	if (now_tick < start_tick)
 	{
 		start_tick = 0;
-		return;
+		return false;
 	}
 
 	if (now_tick - start_tick > STEP_TICK)
