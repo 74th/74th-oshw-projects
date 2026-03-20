@@ -21,3 +21,4 @@ fp-info-cache
 logs
 \#auto_saved_files\#
 *.lck
+*.FCBak
