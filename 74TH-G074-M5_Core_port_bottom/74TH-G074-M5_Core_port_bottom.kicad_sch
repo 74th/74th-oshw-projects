@@ -4,6 +4,10 @@
 	(generator_version "9.0")
 	(uuid "b920046f-b0f9-45d7-bd0d-5e43e4651ee4")
 	(paper "A4")
+	(title_block
+		(title "M5 Core Port Bottom")
+		(rev "1.0.1")
+	)
 	(lib_symbols
 		(symbol "74th_Board:M5Stack_CoreS3_M-BUS_BusShape"
 			(exclude_from_sim no)
