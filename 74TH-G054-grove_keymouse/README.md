@@ -33,6 +33,17 @@ CH9329 の電源は、USB 側から供給されます。
 
 MCU 側では 1 を RXD（CH9329→MCU）、2 を TXD （MCU→CH9329）としてください。
 
+## M5Stack ATOM サンプル
+
+[m5atom-typing-a](./m5atom-typing-a/m5atom-typing-a.ino) は、M5Stack ATOM Lite / Matrix のボタンを押すたびに `LGTM!` と Enter を入力する Arduino スケッチです。Arduino IDE で ESP32 ボードのサポートをインストールし、使用する ATOM のボードを選んで書き込んでください。追加のライブラリは不要です。
+
+ATOM の Port A に Grove KeyMouse を接続し、Grove KeyMouse の USB プラグを入力先の PC に接続します。Port A の GPIO32（白）を UART RX、GPIO26（黄）を UART TX として、9600 bps で通信します。Grove KeyMouse の電源は USB 側から供給されます。入力先のキーボード配列は英語または日本語配列を想定しています。
+
+Arduino IDE のシリアルモニターを 115200 bps で開くと、ボタンを押した際の CH9329 の応答と USB 認識状態を確認できます。`response timeout` の場合は Grove ケーブルと UART の接続を、`USB is not recognized` の場合は Grove KeyMouse の USB 接続と PC 側の認識を確認してください。`CH9329 RX:` の行にはエラー時の応答も 16 進数で表示されます。
+
+> [!Caution]
+> ボタンを押すと、PC でフォーカスされている場所に文字と Enter が入力されます。
+
 ## v1.0.0
 
 - 回路図: [PDF](./grove_keymouse-v1.0.0-semantics.pdf) [KiCanvas](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2F74th%2F74th-oshw-projects%2Fblob%2Fgrove-keymouse%2F1.0.0%2F74TH-G054-grove_keymouse%2Fgrove_keymouse.kicad_sch)
